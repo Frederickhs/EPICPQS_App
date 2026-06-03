@@ -1,0 +1,355 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  scrSummary:
+    Properties:
+      Fill: =RGBA(255, 255, 255, 1)
+      LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
+    Children:
+      - galResult:
+          Control: Gallery@2.15.0
+          Variant: BrowseLayout_Vertical_TwoTextVariant_ver5.0
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Height: =538
+            Items: |-
+              =SortByColumns(
+                  Filter(
+                      colPQSQ As q,
+                      !IsBlank(
+                          LookUp(
+                              colPQSGrade,
+                              QuestionID = q.ID
+                          )
+                      )
+                  ),
+                  "QNumber",
+                  SortOrder.Ascending
+              )
+            Width: =817
+            X: =40
+            Y: =122
+          Children:
+            - lblFinalQuestion:
+                Control: Label@2.5.1
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Color: =RGBA(50, 49, 48, 1)
+                  DisabledColor: =RGBA(161, 159, 157, 1)
+                  Font: =Font.'Segoe UI'
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                  Height: =Self.Size * 1.8
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =12
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =14
+                  Text: =ThisItem.Question
+                  VerticalAlign: =VerticalAlign.Top
+                  Width: =Parent.TemplateWidth - 86
+                  X: =16
+                  Y: =(Parent.TemplateHeight - (Self.Size * 1.8 + lblFinalAnswer.Size * 1.8)) / 2
+            - lblFinalMod:
+                Control: Label@2.5.1
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 0)
+                  BorderStyle: =BorderStyle.None
+                  BorderThickness: =2
+                  Color: =RGBA(50, 49, 48, 1)
+                  DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                  DisabledColor: =RGBA(161, 159, 157, 1)
+                  FocusedBorderThickness: =4
+                  Font: =Font.'Segoe UI'
+                  Height: =28
+                  Text: |-
+                    ="PQS Mod: " & ThisItem.Mod.Value
+                  X: =579
+                  Y: =50
+            - lblFinalAnswer:
+                Control: Label@2.5.1
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Color: =RGBA(96, 94, 92, 1)
+                  DisabledColor: =RGBA(161, 159, 157, 1)
+                  Fill: =If(LookUp(colPQSGrade,QuestionID=ThisItem.ID).IsCorrect="Correct",ColorFade(ColorValue("#107C10"),85%),ColorFade(ColorValue("#D13438"),85%))
+                  Font: =Font.'Segoe UI'
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                  Height: =24
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =12
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =12
+                  Text: =LookUp(colPQSGrade,QuestionID = ThisItem.ID).IsCorrect
+                  VerticalAlign: =VerticalAlign.Top
+                  Width: =78
+                  X: =lblFinalQuestion.X
+                  Y: =lblFinalQuestion.Y + lblFinalQuestion.Height
+            - Separator15:
+                Control: Rectangle@2.3.0
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 0)
+                  Fill: =RGBA(0, 0, 0, 1)
+                  Height: =8
+                  OnSelect: =Select(Parent)
+                  Width: =Parent.TemplateWidth
+                  Y: =Parent.TemplateHeight - Self.Height
+            - Rectangle17:
+                Control: Rectangle@2.3.0
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 0)
+                  Fill: =RGBA(0, 120, 212, 1)
+                  Height: =Parent.TemplateHeight - Separator15.Height
+                  OnSelect: =Select(Parent)
+                  Visible: =ThisItem.IsSelected
+                  Width: =4
+      - Rectangle3_2:
+          Control: Rectangle@2.3.0
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledFill: =RGBA(221, 79, 14, 1)
+            Fill: =RGBA(221, 79, 14, 1)
+            FocusedBorderThickness: =4
+            HoverFill: =RGBA(221, 79, 14, 1)
+            PressedFill: =RGBA(221, 79, 14, 1)
+            Width: =1366
+      - lblPQSResult:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(161, 159, 157, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
+            Height: =52
+            Size: =18
+            Text: =varVenue & " - Results"
+            Width: =939
+            X: =26
+            Y: =27
+      - lbl%:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(50, 49, 48, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(161, 159, 157, 1)
+            Fill: =If(varCorrect >= 80, ColorFade(ColorValue("#107c10"),85%),ColorFade(ColorValue("#d13438"),70%))
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
+            Height: =32
+            Size: =10
+            Text: |-
+              ="Correct Answers: " & varCorrect & "%"
+            Width: =160
+            X: =1164
+            Y: =30
+      - lblResult:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =Color.Black
+            BorderThickness: =2
+            Color: =RGBA(50, 49, 48, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(161, 159, 157, 1)
+            Fill: =If(varCorrect > 80, ColorFade(ColorValue("#107c10"),10%),ColorFade(ColorValue("#d13438"),5%))
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
+            Height: =32
+            Size: =14
+            Text: =varBoardStatus
+            Width: =98
+            X: =1050
+            Y: =30
+      - btnExit:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(161, 159, 157, 1)
+            DisabledFill: =RGBA(242, 242, 241, 0)
+            Fill: =RGBA(255, 0, 0, 1)
+            Font: =Font.'Segoe UI'
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(16, 110, 190, 1)
+            OnSelect: =Reset(varTech);Reset(varSup);Reset(varMng);Clear(colActiveMods);Clear(colWIGrade);Clear(colPQSGrade);Navigate(scrVenue)
+            PressedBorderColor: =RGBA(0, 69, 120, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(16, 110, 190, 1)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Text: ="Exit"
+            X: =1164
+            Y: =701
+      - htmlInfo:
+          Control: HtmlViewer@2.1.0
+          Properties:
+            AutoHeight: =true
+            DisabledBorderColor: =RGBA(161, 159, 157, 1)
+            Font: =Font.'Segoe UI'
+            Height: =88
+            HtmlText: |-
+              =//"Manager: " & txtManager.Text & Char(10) & "Supervisor: " & txtSupervisor.Text & Char(10) & "Tech: " & txtTech.Text
+
+              "<b>Manager: </b>" & txtManager.Text &  " - " & txtManagerSSO.Text &"<br><b>Supervisor: </b>" & txtSupervisor.Text & " - " & txtSupSSO.Text & "<br><b>Tech: </b>" & txtTech.Text & " - " & txtTechSSO.Text
+            Width: =443
+            X: =26
+            Y: =680
+      - Container2:
+          Control: GroupContainer@1.5.0
+          Variant: ManualLayout
+          Properties:
+            Height: =538
+            Visible: =CountRows(colWIGrade) > 0
+            Width: =480
+            X: =866
+            Y: =122
+          Children:
+            - Label10:
+                Control: Label@2.5.1
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 0, 0, 0)
+                  BorderStyle: =BorderStyle.None
+                  BorderThickness: =2
+                  Color: =RGBA(50, 49, 48, 1)
+                  DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                  DisabledColor: =RGBA(161, 159, 157, 1)
+                  FocusedBorderThickness: =4
+                  Font: =Font.'Segoe UI'
+                  FontWeight: =FontWeight.Bold
+                  Height: =48
+                  Text: ="Write-In Questions"
+                  Width: =441
+                  X: =20
+                  Y: =5
+            - galWI:
+                Control: Gallery@2.15.0
+                Variant: BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0
+                Properties:
+                  BorderColor: =RGBA(145, 143, 141, 1)
+                  BorderStyle: =BorderStyle.None
+                  BorderThickness: =10
+                  Height: =485
+                  Items: =colWIGrade
+                  TemplateSize: =193
+                  Width: =480
+                  Y: =53
+                Children:
+                  - Title4:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        Font: =Font.'Segoe UI'
+                        FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                        Height: =144
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =12
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =14
+                        Text: =ThisItem.QNumber & " - " & ThisItem.Question
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =451
+                        X: =15
+                        Y: =10
+                  - Subtitle4:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: |+
+                          =Color.Black
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        Fill: =If(ThisItem.IsCorrect = "Correct", Color.LightGreen ,Color.LightSalmon )
+                        Font: =Font.'Segoe UI'
+                        FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                        Height: =19
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =12
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =12
+                        Text: =ThisItem.IsCorrect
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =110
+                        X: =Title4.X
+                        Y: =Title4.Y + Title4.Height
+                  - Separator5:
+                      Control: Rectangle@2.3.0
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        Fill: =RGBA(255, 255, 255, 1)
+                        Height: =8
+                        OnSelect: =Select(Parent)
+                        Width: =Parent.TemplateWidth
+                        Y: =Parent.TemplateHeight - Self.Height
+                  - Rectangle6:
+                      Control: Rectangle@2.3.0
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        Fill: =RGBA(0, 120, 212, 1)
+                        Height: =Parent.TemplateHeight - Separator5.Height
+                        OnSelect: =Select(Parent)
+                        Visible: =ThisItem.IsSelected
+                        Width: =4
+                  - Subtitle4_1:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: |
+                          =Color.Black
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        Fill: =RGBA(255, 255, 255, 1)
+                        Font: =Font.'Segoe UI'
+                        FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                        Height: =19
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =12
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =12
+                        Text: |-
+                          ="Mod: " & ThisItem.Mod
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =110
+                        X: =149
+                        Y: =Title4.Y + Title4.Height
+                  - Separator15_1:
+                      Control: Rectangle@2.3.0
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        Fill: =RGBA(0, 0, 0, 1)
+                        Height: =8
+                        OnSelect: =Select(Parent)
+                        Width: =Parent.TemplateWidth
+                        Y: =Parent.TemplateHeight - Self.Height

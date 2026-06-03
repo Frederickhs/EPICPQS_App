@@ -1,0 +1,257 @@
+scrVenue As screen:
+    LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
+    OnVisible: =Reset(ddLand)
+
+    Image2 As image:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =768
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Image: ='UEU-Logo-Nebula-BG_AdobeStock_209086800'
+        ImagePosition: =ImagePosition.Fill
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =1366
+        ZIndex: =1
+
+    ddVenue As dropdown:
+        BorderColor: =RGBA(245, 245, 245, 1)
+        ChevronBackground: =RGBA(245, 245, 245, 1)
+        ChevronDisabledBackground: =RGBA(242, 242, 241, 0)
+        ChevronDisabledFill: =RGBA(161, 159, 157, 1)
+        ChevronFill: =RGBA(50, 49, 48, 1)
+        ChevronHoverBackground: =RGBA(245, 245, 245, 1)
+        ChevronHoverFill: =RGBA(50, 49, 48, 1)
+        Color: =RGBA(50, 49, 48, 1)
+        Default: ="Please Select a Venue"
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(161, 159, 157, 1)
+        DisabledFill: =RGBA(242, 242, 241, 0)
+        Fill: =RGBA(245, 245, 245, 1)
+        Font: =Font.'Segoe UI'
+        HoverBorderColor: =RGBA(16, 110, 190, 1)
+        HoverColor: =RGBA(50, 49, 48, 1)
+        HoverFill: =RGBA(245, 245, 245, 1)
+        Items: |-
+            =Switch(
+                ddLand.Selected.Value,
+                "Dark Universe",
+                [
+                    "Darkmoor",
+                    "Curse of the Werewolf",
+                    "Monsters Unchained",
+                    "Please Select a Venue"
+                ],
+                "Potter",
+                [
+                    "Ministry of Magic",
+                    "Paris",
+                    "Le Cirque Arcanus",
+                    "Please Select a Venue"
+                ],
+                "Celestial Park",
+                [
+                    "Constellation Carousel",
+                    "Stardust Racers",
+                    "Celestial Park",
+                    "Please Select a Venue"
+                ],
+                "Nintendo",
+                [
+                    "Mario Kart",
+                    "Yoshi",
+                    "Donkey Kong",
+                    "Nintendo Land",
+                    "Please Select a Venue"
+                ],
+                "Isle of Berk",
+                [
+                    "Dragon Racers Rally",
+                    "Fyre Drill",
+                    "Isle of Berk",
+                    "Untrainable Dragon",
+                    "Wing Gliders",
+                    "Please Select a Venue"
+                ],
+                []
+            )
+        OnChange: |-
+            =Switch(ddVenue.SelectedText.Value,
+            "Darkmoor", Set(varQuestionSource,DU_PQSBank), "Curse of the Werewolf" , Set(varQuestionSource, CU_PQSBank), "Monsters Unchained", Set(varQuestionSource,UC_PQSBank),
+            "Ministry of Magic", Set(varQuestionSource,MI_PQSBank ), "Paris" , Set(varQuestionSource, PA_PQSBank), "Le Cirque Arcanus", Set(varQuestionSource,AR_PQSBank),
+            "Constellation Carousel", Set(varQuestionSource,CC_PQSBank ), "Stardust Racers" , Set(varQuestionSource, SR_PQSBank), "Celestial Park", Set(varQuestionSource,CP_PQSBank),
+            "Mario Kart", Set(varQuestionSource,MK_PQSBank ), "Yoshi" , Set(varQuestionSource, YO_PQSBank), "Donkey Kong", Set(varQuestionSource,DK_PQSBank),"Nintendo Land", Set(varQuestionSource,SU_PQSBank),
+            "Dragon Racers Rally", Set(varQuestionSource,DR_PQSBank ), "Fyre Drill" , Set(varQuestionSource, FD_PQSBank), "Isle of Berk", Set(varQuestionSource,IB_PQSBank),"Untrainable Dragon" , Set(varQuestionSource, UD_PQSBank), "Wing Gliders", Set(varQuestionSource,WG_PQSBank)
+            )
+        PaddingBottom: =5
+        PaddingLeft: =12
+        PaddingRight: =5
+        PaddingTop: =5
+        PressedBorderColor: =RGBA(16, 110, 190, 1)
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =RGBA(0, 120, 212, 1)
+        SelectionColor: =RGBA(50, 49, 48, 1)
+        SelectionFill: =RGBA(0, 120, 212, 1)
+        Size: =13
+        Visible: |-
+            =ddLand.SelectedText.Value in 
+            [
+                "Dark Universe", "Nintendo", "Isle of Berk", "Potter", "Celestial Park"]
+        X: =909
+        Y: =310
+        ZIndex: =2
+
+    btnNext As button:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(161, 159, 157, 1)
+        DisabledFill: =RGBA(242, 242, 241, 0)
+        Fill: =RGBA(0, 120, 212, 1)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =RGBA(16, 110, 190, 1)
+        OnSelect: |
+            =Navigate(scrHome);
+            Set(
+                varTrainer,
+                Switch(
+                    ddLand.SelectedText.Value,
+                    "Celestial Park",
+                    "Darrel Fletcher",
+                    "Dark Universe",
+                    "Frederick Herrera",
+                    "Isle of Berk",
+                    "Evan Garms",
+                    "Nintendo",
+                    "Melissa Cruz",
+                    "Potter",
+                    "Mike Kahl"
+                )
+            );
+            Set(
+                varTrainerSSO,
+                Switch(
+                    ddLand.SelectedText.Value,
+                    "Celestial Park",
+                    "702394772",
+                    "Dark Universe",
+                    "703153842",
+                    "Isle of Berk",
+                    "703089376",
+                    "Nintendo",
+                    "703018098",
+                    "Potter",
+                    "703037277"
+                )
+            );
+        PressedBorderColor: =RGBA(0, 69, 120, 1)
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =RGBA(16, 110, 190, 1)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =15
+        Text: |-
+            ="Next
+            "
+        X: =1140
+        Y: =670
+        ZIndex: =3
+
+    lblTitle As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(161, 159, 157, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.Arial
+        FontWeight: =FontWeight.Bold
+        Height: =130
+        Size: =32
+        Text: ="Epic Universe PQS"
+        Width: =542
+        X: =15
+        Y: =40
+        ZIndex: =4
+
+    ddLand As dropdown:
+        BorderColor: =RGBA(245, 245, 245, 1)
+        ChevronBackground: =RGBA(245, 245, 245, 1)
+        ChevronDisabledBackground: =RGBA(242, 242, 241, 0)
+        ChevronDisabledFill: =RGBA(161, 159, 157, 1)
+        ChevronFill: =RGBA(50, 49, 48, 1)
+        ChevronHoverBackground: =RGBA(245, 245, 245, 1)
+        ChevronHoverFill: =RGBA(50, 49, 48, 1)
+        Color: =RGBA(50, 49, 48, 1)
+        Default: ="Select a land"
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(161, 159, 157, 1)
+        DisabledFill: =RGBA(242, 242, 241, 0)
+        Fill: =RGBA(245, 245, 245, 1)
+        Font: =Font.'Segoe UI'
+        HoverBorderColor: =RGBA(16, 110, 190, 1)
+        HoverColor: =RGBA(50, 49, 48, 1)
+        HoverFill: =RGBA(245, 245, 245, 1)
+        Items: =["Select a land", "Celestial Park", "Dark Universe", "Isle of Berk", "Nintendo", "Potter"]
+        PaddingBottom: =5
+        PaddingLeft: =12
+        PaddingRight: =5
+        PaddingTop: =5
+        PressedBorderColor: =RGBA(16, 110, 190, 1)
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =RGBA(0, 120, 212, 1)
+        SelectionColor: =RGBA(50, 49, 48, 1)
+        SelectionFill: =RGBA(0, 120, 212, 1)
+        Size: =13
+        X: =325
+        Y: =310
+        ZIndex: =5
+
+    Label2 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(161, 159, 157, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        Size: =13
+        Text: |
+            ="Hello " & User().FullName & ", Please make a selection."
+        Width: =588
+        X: =103
+        Y: =180
+        ZIndex: =6
+
+    Label4 As label:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(161, 159, 157, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Bold
+        Height: =37
+        Size: =9
+        Text: =Office365Users.MyProfile().JobTitle
+        Width: =397
+        X: =256
+        Y: =211
+        ZIndex: =8
+
