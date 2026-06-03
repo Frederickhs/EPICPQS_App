@@ -2661,6 +2661,36 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "scrFullON.htmlBoardInfo.HtmlText"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scrFullON.htmlBoardInfo.HtmlText",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "HtmlText",
+                "module": "scrFullON",
+                "type": "scrFullON.htmlBoardInfo"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-InefficientDelayLoading",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "scrFullON.ctWI.btnWICorrect.OnSelect"
                 }
               ],
@@ -2865,36 +2895,6 @@
           },
           "ruleId": "app-CrossScreenEventDependencies",
           "ruleIndex": 7
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "scrFullON.htmlBoardInfo.HtmlText"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "scrFullON.htmlBoardInfo.HtmlText",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "HtmlText",
-                "module": "scrFullON",
-                "type": "scrFullON.htmlBoardInfo"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 5
         }
       ],
       "tool": {

@@ -237,21 +237,3 @@ scrVenue As screen:
         Y: =180
         ZIndex: =6
 
-    Label4 As label:
-        BorderColor: =RGBA(0, 0, 0, 0)
-        BorderStyle: =BorderStyle.None
-        BorderThickness: =2
-        Color: =RGBA(255, 255, 255, 1)
-        DisabledBorderColor: =RGBA(0, 0, 0, 0)
-        DisabledColor: =RGBA(161, 159, 157, 1)
-        FocusedBorderThickness: =4
-        Font: =Font.'Segoe UI'
-        FontWeight: =FontWeight.Bold
-        Height: =37
-        Size: =9
-        Text: =Office365Users.MyProfile().JobTitle
-        Width: =397
-        X: =256
-        Y: =211
-        ZIndex: =8
-
