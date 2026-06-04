@@ -93,6 +93,7 @@ A separate document will be provided in this repository with full setup instruct
 
 ---
 <details>
+
 <summary>Development Workflow (GitHub)</summary>
 
 ## This project uses GitHub for source control of the Power App

@@ -29,6 +29,7 @@ The question bank **must** contain the following columns.
 ---
 
 ### Question
+
 - Type: Text
 - Required: Yes
 - Usage:
@@ -38,6 +39,7 @@ The question bank **must** contain the following columns.
 ---
 
 ### Answer
+
 - Type: Text
 - Required: Yes
 - Usage:
@@ -47,6 +49,7 @@ The question bank **must** contain the following columns.
 ---
 
 ### Mod
+
 - Type: Choice
 - Required: Yes
 - Usage:
@@ -61,6 +64,7 @@ The question bank **must** contain the following columns.
 ---
 
 ### Cat
+
 - Type: Choice
 - Required: Yes (for Mods 1+)
 - Usage:
@@ -72,6 +76,7 @@ The question bank **must** contain the following columns.
 "A", "B"
 
 Category values must never appear in:
+
 - UI
 - Summary
 - Exports
