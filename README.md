@@ -1,6 +1,7 @@
 # EPICPQS_App
 
 ## Overview
+
 EPICPQS_App is a centralized Power Apps solution designed to manage PQS certification boards and supervisor/trainer reviews across all 18 venues at Epic Universe.
 
 The application serves as a reusable, scalable system that dynamically loads venue-specific data while maintaining a standardized certification and review process.
@@ -8,6 +9,7 @@ The application serves as a reusable, scalable system that dynamically loads ven
 ---
 
 ## Features
+
 - Full PQS Boards and Partial PQS Boards
 - Supervisor / Trainer Review mode
 - Session-based tracking using SharePoint lists
@@ -22,6 +24,7 @@ The application serves as a reusable, scalable system that dynamically loads ven
 ---
 
 ## Architecture
+
 The system is built as a reusable Power Apps template with a per-venue data structure.
 
 - One core app handles all venues
@@ -32,6 +35,7 @@ The system is built as a reusable Power Apps template with a per-venue data stru
 ---
 
 ## Board Logic & Rules
+
 - Mod 0 always contains exactly **5 questions**
 - Remaining questions are distributed across other selected modules
 - All questions are **randomly pulled from the Question Bank**
@@ -42,9 +46,11 @@ The system is built as a reusable Power Apps template with a per-venue data stru
 ---
 
 ## Data Sources
+
 All data sources are maintained in SharePoint as Lists.
 
 ### Data Protection
+
 - Columns must be hidden after edits to prevent answer leakage
 - Question and answer visibility is controlled within the app
 - Data is not stored in the application itself
@@ -52,6 +58,7 @@ All data sources are maintained in SharePoint as Lists.
 ---
 
 ## Usage
+
 1. Select a **Land**
 2. Select a **Venue** (data sources load dynamically)
 3. Choose:
@@ -76,6 +83,7 @@ All data sources are maintained in SharePoint as Lists.
 ---
 
 ## Setup
+
 A separate document will be provided in this repository with full setup instructions for:
 
 - Initial deployment
@@ -87,7 +95,7 @@ A separate document will be provided in this repository with full setup instruct
 <details>
 <summary>Development Workflow (GitHub)</summary>
 
-## This project uses GitHub for source control of the Power App.
+## This project uses GitHub for source control of the Power App
 
 ### Export and Update Process
 
@@ -103,10 +111,10 @@ git add .
 git commit -m "Describe change"
 git push
 ```
+
 </details>
 
 ---
-
 
 ## Key Source Files
 
@@ -119,5 +127,6 @@ Important files:
 ---
 
 ## CHANGELOG
+
 All notable changes are tracked in:
 ``CHANGELOG.md``

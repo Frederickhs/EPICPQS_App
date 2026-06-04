@@ -3,16 +3,19 @@
 All notable changes to the **PQS Board Template** are documented in this file.
 
 This project follows a **controlled update model**:
+
 - Logic changes are versioned
 - Venue implementations should reference the template version in use
 - Non‑logical changes are explicitly noted
 
 ---
+
 ## [v2.1.0] – 6/4/26 - Changes on the UI and Functions in the App
 
 **Status:** Approved
 
 ### Added
+
 - UI Changes.
 - Change on the names of buttons, labels and text boxes.
 - For every WI a new email is sent to EPICRSTrainers.
@@ -23,6 +26,7 @@ This project follows a **controlled update model**:
 - For **WIs** now it requires to make a MOD Selection.
 
 ### Fixed
+
 - Email sent after PQS Board/Review now has the name of the .PDF File in the subject, showing the Venue.
 - SSO is needed to show Start button for PQS Boards and Reviews.
 
@@ -31,44 +35,48 @@ This project follows a **controlled update model**:
 
 ---
 
-<details>
-    <summary>Previous Versions</summary>
+## Previous Versions
 
 ## [v2.0.0] – 6/3/26 - App updated for All of EPIC Universe, 1 app for all venues
 
 **Status:** Approved
 
 ### Added
+
 - Now all the venues can be accesed by a single app
 - Multiple updates in UI
 - Multiple functions to get the app ready for deployment
 
 ### Fixed
-- 
+
+-
 
 >[!IMPORTANT]
 >This version is not stable yet, more work needs to be done before it goes live to production
 
 ## [v1.3.0] – Update on Review and creations of a PDF File
 
-**Status:** Approved 
+**Status:** Approved
 
 ### Added
+
 - Added `Gallery1` in `scrReview`
-    - Added `Button1` inside `Gallery1`
+  - Added `Button1` inside `Gallery1`
 - Added `btnPDF` in `scrSummary`
 
 ### Fixed
+
 - Now `scrReview` will only show all the possible Mods for the selected venue.
 - With `btnPDF` in `scrSummary` a PDF will be emailed including:
-    - Results of the Board
+  - Results of the Board
           - Answers are shown only as Incorrect or Correct
-    - Questions Asked
-    - Tech name and SSO
-    - Supervisor name and SSO
-    - Manager name and SSO
-    - Date and time
-    - Venue
+  - Questions Asked
+  - Tech name and SSO
+  - Supervisor name and SSO
+  - Manager name and SSO
+  - Date and time
+  - Venue
+
 >[!IMPORTANT]
 >The `btnPDF` is currently hidden.
 >
@@ -76,11 +84,13 @@ This project follows a **controlled update model**:
 >If you want to test the function you will need to Unhide `btnPDF`
 
 ---
+
 ## [v1.2.1] – Documentation updated
 
 **Status:** In Progress  
 
 ### Added
+
 - updated changes from [v1.2.0] to:
   - README.md
   - VENUE_SETUP.md
@@ -92,33 +102,37 @@ This project follows a **controlled update model**:
 **Status:** In Progress  
 
 ### Added
+
 - Added `scrVenue`
-    - Added `btnNext` and `ddVenue`
+  - Added `btnNext` and `ddVenue`
 
 ### Fixed
+
 - Now `ddVenue` will select one Venue out of the Possible Venues in the Land, this will help on getting only **ONE APP** per land instead of one app per Venue
 - Changed the functionality of `scrBoard`
-    - `CheckBox 4` will still filter the Database and only show the posible mods per venue
-    - Code was changed on `galMods` and `Checkbox4`
+  - `CheckBox 4` will still filter the Database and only show the posible mods per venue
+  - Code was changed on `galMods` and `Checkbox4`
 - Selecting the Venue in `ddVenue` will automatically update the name of the venue in `lblVenue`.
+
 >[!NOTE]
 >Changes still need to be made in `README.md`, `FORMULAS_OVERVIEW.md` and `VENUE_SETUP.md` on a later date.
 
 >[!IMPORTANT]
 >Changes in `FORMULA_OVERVIEW.md` are not done, so please don't refer to `FORMULA_OVERVIEW.md` until after all changes are made
 
-
 ---
 
 ## [v1.0.1] – Minor patch
 
-**Status:** Approved   
+**Status:** Approved
 
 ### Added
+
 - All the Exit and Back Buttons are now clearing colActiveMods
 - Added ``varVenue``
 
 ### Fixed
+
 - on scrBoard, when ``Full PQS`` was auto selected, ``scrFullON`` was not loading the buttons in ``galMod``.
 This has been fixed by forcing the selection of a Mod, updating the code in ``btnStart``.
 Now ``btnStart`` is not selectable until a selection is made.
@@ -138,6 +152,7 @@ Now once the Name of the Venue is added, it will update on:
 **Impact:** Baseline release  
 
 ### Added
+
 - Full PQS board engine
 - Partial PQS board support
 - Live grading with hard stop rules
@@ -149,6 +164,7 @@ Now once the Name of the Venue is added, it will update on:
   - `colPQSGrade`
 
 ### Board Rules
+
 - Full PQS spans all modules in a single board
 - Pass at **20 correct**
 - Fail at **4 incorrect**
@@ -156,24 +172,22 @@ Now once the Name of the Venue is added, it will update on:
 - Non‑zero modules use Category **A / B** for distribution only
 
 ### Data Handling
+
 - Answers displayed in‑app only
 - Answers never stored in grading or persistence
 - Category values withheld from UI and reporting
 
 ### Documentation
+
 - README.md
 - VENUE_SETUP.md
 - QUESTION_BANK_SCHEMA.md
 - ARCHITECTURE.md
 - BOARD_LOGIC.md
-</details>
-
 
 ---
 
-
-<details>
-<summary>Version Control</summary>
+## Version Control
 
 - This repository is the **single source of truth** for PQS Board logic.
 - Venue implementations **must not** introduce logic changes outside this repository.
@@ -181,8 +195,7 @@ Now once the Name of the Venue is added, it will update on:
   1. Committed to the template repository
   2. Reflected in this changelog
   3. Released under an explicit version number
- 
-  
+
 ## Versioning Explanation
 
 This repository uses **Semantic Versioning** in the format:
@@ -193,10 +206,12 @@ This repository uses **Semantic Versioning** in the format:
 The **MAJOR** version changes only when **core certification logic or rules change**.
 
 A MAJOR version change indicates that:
+
 - Existing venue implementations may need review
 - Board behavior is intentionally different from previous versions
 
 Examples of MAJOR changes:
+
 - Changing pass/fail thresholds
 - Redefining what constitutes a Full PQS
 - Altering the total number of required correct answers
@@ -207,11 +222,13 @@ Examples of MAJOR changes:
 The **MINOR** version changes when **new functionality is added** that does **not** break existing behavior.
 
 A MINOR version change indicates that:
+
 - Existing venues continue to function as‑is
 - New features are optional or additive
 - No certification rule changes occur
 
 Examples of MINOR changes:
+
 - Adding optional audit infrastructure (not enforced)
 - Adding PDF export capability
 - Adding session IDs without changing grading
@@ -222,13 +239,15 @@ Examples of MINOR changes:
 The **PATCH** version changes when **bug fixes or documentation updates** are made with **no logic changes**.
 
 A PATCH version change indicates that:
+
 - Board behavior is identical
 - Certification outcomes are unaffected
 - Updating is safe and low risk
 
 Examples of PATCH changes:
+
 - Fixing a typo in documentation
 - Correcting a label or comment
 - Cleaning up non‑functional formulas
 - Clarifying variable names without changing logic
-</details>
+
