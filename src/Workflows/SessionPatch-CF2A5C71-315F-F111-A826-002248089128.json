@@ -95,12 +95,35 @@
             },
             "host": {
               "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
-              "connectionName": "shared_sharepointonline",
-              "operationId": "PostItem"
+              "operationId": "PostItem",
+              "connectionName": "shared_sharepointonline"
+            }
+          }
+        },
+        "Respond_to_a_Power_App_or_flow": {
+          "runAfter": {
+            "Create_item": [
+              "Succeeded"
+            ]
+          },
+          "type": "Response",
+          "kind": "PowerApp",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "sessionid": {
+                  "title": "SessionID",
+                  "type": "number",
+                  "x-ms-content-hint": "NUMBER",
+                  "x-ms-dynamically-added": true
+                }
+              },
+              "additionalProperties": {}
             },
-            "authentication": {
-              "value": "@json(decodeBase64(triggerOutputs().headers['X-MS-APIM-Tokens']))['$ConnectionKey']",
-              "type": "Raw"
+            "statusCode": 200,
+            "body": {
+              "sessionid": "@outputs('Create_item')?['body/ID']"
             }
           }
         }

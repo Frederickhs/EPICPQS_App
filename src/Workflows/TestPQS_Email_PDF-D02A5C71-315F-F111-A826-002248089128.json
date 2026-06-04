@@ -1,15 +1,6 @@
 {
   "properties": {
     "connectionReferences": {
-      "shared_office365_1": {
-        "runtimeSource": "invoker",
-        "connection": {
-          "connectionReferenceLogicalName": "pqs_sharedoffice365_8535a"
-        },
-        "api": {
-          "name": "shared_office365"
-        }
-      },
       "shared_onedriveforbusiness": {
         "runtimeSource": "invoker",
         "connection": {
@@ -17,6 +8,15 @@
         },
         "api": {
           "name": "shared_onedriveforbusiness"
+        }
+      },
+      "shared_office365_1": {
+        "runtimeSource": "invoker",
+        "connection": {
+          "connectionReferenceLogicalName": "pqs_sharedoffice365_8535a"
+        },
+        "api": {
+          "name": "shared_office365"
         }
       }
     },
@@ -82,12 +82,8 @@
             },
             "host": {
               "apiId": "/providers/Microsoft.PowerApps/apis/shared_onedriveforbusiness",
-              "connectionName": "shared_onedriveforbusiness",
-              "operationId": "CreateFile"
-            },
-            "authentication": {
-              "value": "@json(decodeBase64(triggerOutputs().headers['X-MS-APIM-Tokens']))['$ConnectionKey']",
-              "type": "Raw"
+              "operationId": "CreateFile",
+              "connectionName": "shared_onedriveforbusiness"
             }
           },
           "runtimeConfiguration": {
@@ -113,46 +109,36 @@
             },
             "host": {
               "apiId": "/providers/Microsoft.PowerApps/apis/shared_onedriveforbusiness",
-              "connectionName": "shared_onedriveforbusiness",
-              "operationId": "ConvertFile"
-            },
-            "authentication": {
-              "value": "@json(decodeBase64(triggerOutputs().headers['X-MS-APIM-Tokens']))['$ConnectionKey']",
-              "type": "Raw"
+              "operationId": "ConvertFile",
+              "connectionName": "shared_onedriveforbusiness"
             }
           }
         },
-        "Send_an_email_(V2)": {
+        "Send_an_email_from_a_shared_mailbox_(V2)": {
           "runAfter": {
             "Convert_file": [
               "Succeeded"
             ]
           },
-          "metadata": {
-            "operationMetadataId": "881bb557-0db2-4c3b-b2ee-1cdf6f8852ab"
-          },
           "type": "OpenApiConnection",
           "inputs": {
             "parameters": {
+              "emailMessage/MailboxAddress": "EpicRSTrainers@uniparks.com",
               "emailMessage/To": "EpicRSTrainers@uniparks.com",
-              "emailMessage/Subject": "PQS Review Result",
-              "emailMessage/Body": "<p class=\"editor-paragraph\">Please see the attached file.</p>",
+              "emailMessage/Subject": "Test PDF",
+              "emailMessage/Body": "<p class=\"editor-paragraph\">Please ignore this email</p>",
               "emailMessage/Attachments": [
                 {
-                  "Name": "@{triggerBody()['text_1']}.pdf",
+                  "Name": "@{triggerBody()?['text_1']}.pdf",
                   "ContentBytes": "@body('Convert_file')"
                 }
               ],
-              "emailMessage/Importance": "Normal"
+              "emailMessage/Importance": "Low"
             },
             "host": {
               "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365",
-              "connectionName": "shared_office365_1",
-              "operationId": "SendEmailV2"
-            },
-            "authentication": {
-              "value": "@json(decodeBase64(triggerOutputs().headers['X-MS-APIM-Tokens']))['$ConnectionKey']",
-              "type": "Raw"
+              "operationId": "SharedMailboxSendEmailV2",
+              "connectionName": "shared_office365_1"
             }
           }
         }
