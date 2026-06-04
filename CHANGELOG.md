@@ -15,6 +15,7 @@ This project follows a **controlled update model**:
 ### Added
 - Now all the venues can be accesed by a single app
 - Multiple updates in UI
+- Multiple functions to get the app ready for deployment
 
 ### Fixed
 - 
