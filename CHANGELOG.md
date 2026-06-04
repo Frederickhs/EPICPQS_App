@@ -14,7 +14,7 @@ This project follows a **controlled update model**:
 
 ### Added
 - Now all the venues can be accesed by a single app
-- Multiple uopdates in UI
+- Multiple updates in UI
 
 ### Fixed
 - 
@@ -23,6 +23,10 @@ This project follows a **controlled update model**:
 >This version is not stable yet, more work needs to be done before it goes live to production
 
 ---
+
+<details>
+    <summary>Previous Versions</summary>
+
 ## [v1.3.0] – Update on Review and creations of a PDF File
 
 **Status:** Approved 
@@ -140,10 +144,14 @@ Now once the Name of the Venue is added, it will update on:
 - QUESTION_BANK_SCHEMA.md
 - ARCHITECTURE.md
 - BOARD_LOGIC.md
+</details>
+
 
 ---
 
-## Version Control
+
+<details>
+<summary>Version Control</summary>
 
 - This repository is the **single source of truth** for PQS Board logic.
 - Venue implementations **must not** introduce logic changes outside this repository.
@@ -201,3 +209,4 @@ Examples of PATCH changes:
 - Correcting a label or comment
 - Cleaning up non‑functional formulas
 - Clarifying variable names without changing logic
+</details>
