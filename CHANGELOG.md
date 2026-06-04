@@ -8,6 +8,32 @@ This project follows a **controlled update model**:
 - Non‑logical changes are explicitly noted
 
 ---
+## [v2.1.0] – 6/4/26 - Changes on the UI and Functions in the App
+
+**Status:** Approved
+
+### Added
+- UI Changes.
+- Change on the names of buttons, labels and text boxes.
+- For every WI a new email is sent to EPICRSTrainers.
+- On ```scrFullON``` if <20 Questions have been asked the completed button displays a different text and will change on >20.
+- **EPIC_PQSBoardResults** now shows the status of the Board/Review.
+- **EPIC_PQSBoardResults** now shows how many times the refresh button was triggered, only in PQS Boards.
+- For **WIs** on PQS Boards it gives an error if blank **or** if the user writes "WI".
+- For **WIs** now it requires to make a MOD Selection.
+
+### Fixed
+- Email sent after PQS Board/Review now has the name of the .PDF File in the subject, showing the Venue.
+- SSO is needed to show Start button for PQS Boards and Reviews.
+
+>[!IMPORTANT]
+>This version is not stable yet, more work needs to be done before it goes live to production
+
+---
+
+<details>
+    <summary>Previous Versions</summary>
+
 ## [v2.0.0] – 6/3/26 - App updated for All of EPIC Universe, 1 app for all venues
 
 **Status:** Approved
@@ -22,11 +48,6 @@ This project follows a **controlled update model**:
 
 >[!IMPORTANT]
 >This version is not stable yet, more work needs to be done before it goes live to production
-
----
-
-<details>
-    <summary>Previous Versions</summary>
 
 ## [v1.3.0] – Update on Review and creations of a PDF File
 
