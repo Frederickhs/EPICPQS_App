@@ -492,7 +492,7 @@
                     If(
                         varTotalAnswered < 20,
                         User().FullName & " Board is not complete (less than 20 answered). Are you sure you want to finish?",
-                        varTotalAnswered >= 20,
+                        varTotalAnswered > 20,
                         "Are you sure the Board is completed?"
                     )
                 ),
