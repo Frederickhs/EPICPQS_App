@@ -102,7 +102,7 @@ A separate document will be provided in this repository with full setup instruct
 ```bash
 pac solution export --name PQS_EPIC --path solution.zip --managed false --overwrite
 
-pac solution unpack --zipfile solution.zip --folder src --packagetype Unmanaged
+pac solution unpack --zipfile solution.zip --folder src --packagetype Unmanaged --overwrite
 
 pac canvas unpack --msapp src\CanvasApps\*.msapp --sources src\CanvasApps\app
 
