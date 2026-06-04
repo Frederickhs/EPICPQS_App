@@ -2,7 +2,7 @@ scrPReview As screen:
     LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
     OnVisible: =Reset(rdReview);Reset(txtRSupSSO);Reset(txtRTrainerSSO);Reset(txtRTech);Reset(txtRTechSSO)
 
-    Image2_2 As image:
+    imgBackR As image:
         BorderColor: =RGBA(0, 0, 0, 0)
         BorderStyle: =BorderStyle.None
         BorderThickness: =2
@@ -19,7 +19,7 @@ scrPReview As screen:
         Width: =1366
         ZIndex: =1
 
-    lblPQSStart_1 As label:
+    lblPQSRStart As label:
         Align: =Align.Center
         BorderColor: =RGBA(0, 0, 0, 0)
         BorderStyle: =BorderStyle.None
@@ -38,7 +38,7 @@ scrPReview As screen:
         Y: =48
         ZIndex: =2
 
-    Image11_4 As image:
+    imgUORR As image:
         BorderColor: =RGBA(0, 0, 0, 0)
         BorderStyle: =BorderStyle.None
         BorderThickness: =2
@@ -60,7 +60,8 @@ scrPReview As screen:
         BorderColor: =RGBA(245, 245, 245, 1)
         BorderThickness: =2
         Color: =RGBA(50, 49, 48, 1)
-        Default: =If(IsBlank(txtRTechSSO.Text),"",LookUp(EpicTech_Info, SSO = txtRTechSSO.Text,Name))
+        Default: |-
+            =If(IsBlank(txtRTechSSO.Text),"",First(Office365Users.SearchUser({searchTerm: (txtRTechSSO.Text)})).DisplayName)
         DisabledBorderColor: =RGBA(0, 0, 0, 0)
         DisabledColor: =RGBA(161, 159, 157, 1)
         DisabledFill: =RGBA(242, 242, 241, 0)
@@ -78,6 +79,7 @@ scrPReview As screen:
         RadiusTopLeft: =0
         RadiusTopRight: =0
         Size: =13
+        Visible: =!IsBlank(txtRTechSSO.Text)
         X: =95
         Y: =225
         ZIndex: =4
@@ -139,7 +141,8 @@ scrPReview As screen:
         BorderColor: =RGBA(245, 245, 245, 1)
         BorderThickness: =2
         Color: =RGBA(50, 49, 48, 1)
-        Default: =If(IsBlank(txtRTrainerSSO.Text),"",LookUp(Trainer_Info,SSO=txtRTrainerSSO.Text,Name))
+        Default: |-
+            =If(IsBlank(txtRTrainerSSO.Text),"",First(Office365Users.SearchUser({searchTerm: (txtRTrainerSSO.Text)})).DisplayName)
         DisabledBorderColor: =RGBA(0, 0, 0, 0)
         DisabledColor: =RGBA(161, 159, 157, 1)
         DisabledFill: =RGBA(242, 242, 241, 0)
@@ -158,7 +161,7 @@ scrPReview As screen:
         RadiusTopLeft: =0
         RadiusTopRight: =0
         Size: =13
-        Visible: =rdReview.Selected.Value = "Trainer Review"
+        Visible: =!IsBlank(txtRTrainerSSO.Text)
         X: =95
         Y: =346
         ZIndex: =7
@@ -194,7 +197,8 @@ scrPReview As screen:
         BorderColor: =RGBA(245, 245, 245, 1)
         BorderThickness: =2
         Color: =RGBA(50, 49, 48, 1)
-        Default: =If(IsBlank(txtRSupSSO.Text),"",LookUp(Leadership_Info,SSO=txtRSupSSO.Text,Name))
+        Default: |-
+            =If(IsBlank(txtRSupSSO.Text),"",First(Office365Users.SearchUser({searchTerm: (txtRSupSSO.Text)})).DisplayName)
         DisabledBorderColor: =RGBA(0, 0, 0, 0)
         DisabledColor: =RGBA(161, 159, 157, 1)
         DisabledFill: =RGBA(242, 242, 241, 0)
@@ -213,7 +217,7 @@ scrPReview As screen:
         RadiusTopLeft: =0
         RadiusTopRight: =0
         Size: =13
-        Visible: =rdReview.Selected.Value = "Supervisor Review"
+        Visible: =!IsBlank(txtRSupSSO.Text)
         X: =95
         Y: =464
         ZIndex: =9
@@ -281,7 +285,15 @@ scrPReview As screen:
                 varVenueSelected,
                 ddVenue.SelectedText.Value
             );
-            //Patch(EPIC_PQSBoardResults,Defaults(EPIC_PQSBoardResults),{BoardSessionID:varBoardSessionID,Venue:varVenueSelected,TechName:varRTech.Text,SupervisorName:varRSup.Text});
+            //Patch Report
+            Set(VarSessionID,
+            SessionPatch.Run(  
+                varRTech.Text,
+                "Review",
+                varRSup.Text,
+                varVenueSelected,
+                Text(Now())
+            ).sessionid)
         PressedBorderColor: =RGBA(0, 69, 120, 1)
         PressedColor: =RGBA(255, 255, 255, 1)
         PressedFill: =RGBA(16, 110, 190, 1)
@@ -295,4 +307,30 @@ scrPReview As screen:
         X: =603
         Y: =661
         ZIndex: =11
+
+    btnBack_3 As button:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(161, 159, 157, 1)
+        DisabledFill: =RGBA(242, 242, 241, 0)
+        Fill: =RGBA(255, 0, 0, 1)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =RGBA(16, 110, 190, 1)
+        OnSelect: =Navigate(scrHome)
+        PressedBorderColor: =RGBA(0, 69, 120, 1)
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =RGBA(16, 110, 190, 1)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =15
+        Text: ="Back"
+        X: =64
+        Y: =711
+        ZIndex: =12
 

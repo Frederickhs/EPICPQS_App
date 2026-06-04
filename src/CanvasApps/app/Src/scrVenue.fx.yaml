@@ -1,8 +1,8 @@
 scrVenue As screen:
     LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
-    OnVisible: =Reset(ddLand)
+    OnVisible: =Reset(ddLand);Set(varRefreshCount, 0)
 
-    Image2 As image:
+    imgBack As image:
         BorderColor: =RGBA(0, 0, 0, 0)
         BorderStyle: =BorderStyle.None
         BorderThickness: =2
@@ -219,7 +219,7 @@ scrVenue As screen:
         Y: =310
         ZIndex: =5
 
-    Label2 As label:
+    lblUser As label:
         Align: =Align.Center
         BorderColor: =RGBA(0, 0, 0, 0)
         BorderStyle: =BorderStyle.None
@@ -236,4 +236,21 @@ scrVenue As screen:
         X: =103
         Y: =180
         ZIndex: =6
+
+    lblUserTitle As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(161, 159, 157, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        Size: =13
+        Text: =Office365Users.MyProfile().JobTitle
+        Width: =588
+        X: =103
+        Y: =220
+        ZIndex: =7
 

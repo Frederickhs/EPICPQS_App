@@ -1,50 +1,22 @@
 "scrFullON As screen.'autoLayout_HeaderFooter_ver1.0'":
     LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
-    OnVisible: =Set(varSelectedMod,"0");Clear(colPQSGrade);Set(varMaxCorrect,20);Set(varMaxIncorrect,4);CountIf(colPQSGrade,IsCorrect="Correct");CountIf(colPQSGrade,IsCorrect="Incorrect");Select(btnRefresh_1)
+    OnVisible: =Set(varSelectedMod,"0");Clear(colPQSGrade);Set(varMaxCorrect,20);Set(varMaxIncorrect,4);CountIf(colPQSGrade,IsCorrect="Correct");CountIf(colPQSGrade,IsCorrect="Incorrect");Select(btnRefreshBoard)
 
-    galMod As gallery.galleryHorizontal:
-        BorderColor: =RGBA(245, 245, 245, 1)
-        DelayItemLoading: =true
-        Height: =105
-        Items: =colActiveMods
-        LoadingSpinner: =LoadingSpinner.Data
-        TemplatePadding: =0
-        TemplateSize: =207
+    imgBannerBoard As image:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Image: ='UEU-Logo-Nebula-BG_AdobeStock_209086800'
+        ImagePosition: =ImagePosition.Fill
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedFill: =RGBA(0, 0, 0, 0)
         Width: =1366
-        Y: =100
         ZIndex: =1
-
-        Button9 As button:
-            BorderColor: =RGBA(0, 0, 0, 0)
-            BorderStyle: =BorderStyle.None
-            DisabledBorderColor: =RGBA(0, 0, 0, 0)
-            DisabledColor: =RGBA(161, 159, 157, 1)
-            DisabledFill: =RGBA(242, 242, 241, 0)
-            Fill: |-
-                =If(ThisItem.Value = varSelectedMod, ColorValue("#0078D4"), ColorValue("#E5E5E5"))
-            Font: =Font.'Segoe UI'
-            FontWeight: =FontWeight.Semibold
-            Height: =50
-            HoverBorderColor: =RGBA(0, 0, 0, 0)
-            HoverColor: =RGBA(255, 255, 255, 1)
-            HoverFill: =RGBA(16, 110, 190, 1)
-            OnSelect: =Set(varSelectedMod,ThisItem.Value)
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PressedBorderColor: =RGBA(0, 69, 120, 1)
-            PressedColor: =RGBA(255, 255, 255, 1)
-            PressedFill: =RGBA(16, 110, 190, 1)
-            RadiusBottomLeft: =0
-            RadiusBottomRight: =0
-            RadiusTopLeft: =0
-            RadiusTopRight: =0
-            Size: =15
-            Text: ="Mod " & ThisItem.Value
-            Width: =92
-            X: =80
-            Y: =32
-            ZIndex: =1
 
     "galQuestion As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver5.0'":
         BorderColor: =RGBA(245, 245, 245, 1)
@@ -58,7 +30,7 @@
         Width: =1275
         X: =44
         Y: =217
-        ZIndex: =1
+        ZIndex: =2
 
         btnIncorrect As button:
             BorderColor: =RGBA(0, 0, 0, 0)
@@ -179,7 +151,51 @@
             Y: =17
             ZIndex: =7
 
-    btnRefresh_1 As button:
+    galMod As gallery.galleryHorizontal:
+        BorderColor: =RGBA(245, 245, 245, 1)
+        DelayItemLoading: =true
+        Height: =105
+        Items: =colActiveMods
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =0
+        TemplateSize: =207
+        Width: =1366
+        Y: =100
+        ZIndex: =3
+
+        btnModValue As button:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(161, 159, 157, 1)
+            DisabledFill: =RGBA(242, 242, 241, 0)
+            Fill: |-
+                =If(ThisItem.Value = varSelectedMod, ColorValue("#0078D4"), ColorValue("#E5E5E5"))
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Height: =50
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(16, 110, 190, 1)
+            OnSelect: =Set(varSelectedMod,ThisItem.Value)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PressedBorderColor: =RGBA(0, 69, 120, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(16, 110, 190, 1)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =15
+            Text: ="Mod " & ThisItem.Value
+            Width: =92
+            X: =80
+            Y: =32
+            ZIndex: =1
+
+    btnRefreshBoard As button:
         BorderColor: =RGBA(0, 0, 0, 0)
         BorderStyle: =BorderStyle.None
         DisabledBorderColor: =RGBA(0, 0, 0, 0)
@@ -191,53 +207,75 @@
         HoverBorderColor: =RGBA(0, 0, 0, 0)
         HoverColor: =RGBA(255, 255, 255, 1)
         HoverFill: =RGBA(16, 110, 190, 1)
-        OnSelect: |-
-            =Set(
-                varModCount,
-                CountRows(colActiveMods)
-            );
+        OnSelect: |
+            =//===== REFRESH COUNT ========
+            
+            Set(varRefreshCount, Coalesce(varRefreshCount, 0) + 1);
+            
+            // ===== MOD COUNT + TOTAL QUESTIONS =====
+            Set(varModCount, CountRows(colActiveMods));
+            
             Set(
                 varTotalQuestions,
                 Switch(
                     varModCount,
-                    2,
-                    29,
-                    3,
-                    29,
-                    4,
-                    35,
-                    5,
-                    37,
-                    37
+                    1, 30,
+                    2, 30,
+                    3, 32,
+                    4, 36,
+                    5, 41,
+                    41
                 )
             );
+            
+            // ===== IDENTIFY SINGLE MOD =====
+            Set(
+                varSingleModValue,
+                If(varModCount = 1, First(colActiveMods).Value, Blank())
+            );
+            
+            // ===== MOD 0 COUNT =====
             Set(
                 varMod0Count,
-                5
-            );
-            Set(
-                varRemainingQuestions,
-                varTotalQuestions - varMod0Count
-            );
-            Set(
-                varNonZeroModCount,
-                varModCount - 1
-            );
-            Set(
-                varQuestionsPerMod,
-                RoundDown(
-                    varRemainingQuestions / varNonZeroModCount,
-                    0
+                If(
+                    varModCount = 1 && varSingleModValue = "0",
+                    varTotalQuestions,
+                    5
                 )
             );
+            
+            // ===== REMAINING =====
+            Set(varRemainingQuestions, varTotalQuestions - varMod0Count);
+            
+            // ===== NON-ZERO MOD COUNT =====
+            Set(
+                varNonZeroModCount,
+                CountRows(Filter(colActiveMods, Value <> "0"))
+            );
+            
+            // ===== QUESTIONS PER MOD =====
+            Set(
+                varQuestionsPerMod,
+                If(
+                    varNonZeroModCount = 0,
+                    0,
+                    RoundDown(varRemainingQuestions / varNonZeroModCount, 0)
+                )
+            );
+            
+            // ===== CATEGORY SPLIT =====
             Set(
                 varCatACount,
-                2
+                If(
+                    varNonZeroModCount = 1,
+                    RoundDown(varQuestionsPerMod / 2, 0),
+                    5
+                )
             );
-            Set(
-                varCatBCount,
-                varQuestionsPerMod - varCatACount
-            );
+            
+            Set(varCatBCount, varQuestionsPerMod - varCatACount);
+            
+            // ===== CLEANUP EXISTING QUESTIONS =====
             RemoveIf(
                 colPQSQ,
                 IsBlank(
@@ -247,61 +285,76 @@
                     )
                 )
             );
+            
+            // ===== MOD 0 PULL =====
             Collect(
                 colPQSQ,
                 FirstN(
                     Shuffle(
                         Filter(
                             varQuestionSource,
-                            Mod.Value = "0" && !(ID in colPQSGrade.QuestionID) && !(ID in colPQSQ.ID)
+                            Mod.Value = "0" &&
+                            !(ID in colPQSGrade.QuestionID) &&
+                            !(ID in colPQSQ.ID)
                         )
                     ),
                     Max(
                         0,
-                        varMod0Count - CountIf(
-                            colPQSQ,
-                            Mod.Value = "0"
-                        )
+                        varMod0Count - CountIf(colPQSQ, Mod.Value = "0")
                     )
                 )
             );
-            ForAll(
-                Filter(
-                    colActiveMods,
-                    Value <> "0"
-                ) As m,
-                Collect(
-                    colPQSQ,
-                    FirstN(
-                        Shuffle(
-                            Filter(
-                                varQuestionSource,
-                                Mod.Value = m.Value && Cat.Value = "A" && !(ID in colPQSGrade.QuestionID) && !(ID in colPQSQ.ID)
-                            )
-                        ),
-                        Max(
-                            0,
-                            varCatACount - CountIf(
-                                colPQSQ,
-                                Mod.Value = m.Value && Cat.Value = "A"
+            
+            // ===== A/B LOGIC (ALL NON-ZERO MODS, INCLUDING SINGLE MOD CASE) =====
+            If(
+                varNonZeroModCount > 0,
+                ForAll(
+                    Filter(colActiveMods, Value <> "0") As m,
+            
+                    // --- CATEGORY A ---
+                    Collect(
+                        colPQSQ,
+                        FirstN(
+                            Shuffle(
+                                Filter(
+                                    varQuestionSource,
+                                    Mod.Value = m.Value &&
+                                    Cat.Value = "A" &&
+                                    !(ID in colPQSGrade.QuestionID) &&
+                                    !(ID in colPQSQ.ID)
+                                )
+                            ),
+                            Max(
+                                0,
+                                varCatACount -
+                                CountIf(
+                                    colPQSQ,
+                                    Mod.Value = m.Value && Cat.Value = "A"
+                                )
                             )
                         )
-                    )
-                );
-                Collect(
-                    colPQSQ,
-                    FirstN(
-                        Shuffle(
-                            Filter(
-                                varQuestionSource,
-                                Mod.Value = m.Value && Cat.Value = "B" && !(ID in colPQSGrade.QuestionID) && !(ID in colPQSQ.ID)
-                            )
-                        ),
-                        Max(
-                            0,
-                            varCatBCount - CountIf(
-                                colPQSQ,
-                                Mod.Value = m.Value && Cat.Value = "B"
+                    );
+            
+                    // --- CATEGORY B ---
+                    Collect(
+                        colPQSQ,
+                        FirstN(
+                            Shuffle(
+                                Filter(
+                                    varQuestionSource,
+                                    Mod.Value = m.Value &&
+                                    Cat.Value = "B" &&
+                                    !(ID in colPQSGrade.QuestionID) &&
+                                    !(ID in colPQSQ.ID)
+                                )
+                            ),
+                            Max(
+                                0,
+                                varCatBCount -
+                                CountIf(
+                                    colPQSQ,
+                                    Mod.Value = m.Value && Cat.Value = "B"
+                                )
                             )
                         )
                     )
@@ -320,19 +373,7 @@
             "
         X: =536
         Y: =691
-        ZIndex: =7
-
-    Rectangle3_1 As rectangle:
-        BorderColor: =RGBA(0, 0, 0, 0)
-        BorderStyle: =BorderStyle.None
-        BorderThickness: =2
-        DisabledFill: =RGBA(221, 79, 14, 1)
-        Fill: =RGBA(221, 79, 14, 1)
-        FocusedBorderThickness: =4
-        HoverFill: =RGBA(221, 79, 14, 1)
-        PressedFill: =RGBA(221, 79, 14, 1)
-        Width: =1366
-        ZIndex: =8
+        ZIndex: =4
 
     lblBoard As label:
         Align: =Align.Center
@@ -351,9 +392,9 @@
         Width: =800
         X: =190
         Y: =24
-        ZIndex: =9
+        ZIndex: =6
 
-    btnBack_1 As button:
+    btnBackB As button:
         BorderColor: =RGBA(0, 0, 0, 0)
         BorderStyle: =BorderStyle.None
         DisabledBorderColor: =RGBA(0, 0, 0, 0)
@@ -377,7 +418,7 @@
         Text: ="Back"
         X: =44
         Y: =691
-        ZIndex: =10
+        ZIndex: =7
 
     lblCorrect As label:
         BorderColor: =RGBA(0, 0, 0, 0)
@@ -396,7 +437,7 @@
         Width: =123
         X: =20
         Y: =12
-        ZIndex: =14
+        ZIndex: =8
 
     lblIncorrect As label:
         BorderColor: =RGBA(0, 0, 0, 0)
@@ -415,7 +456,7 @@
         Width: =120
         X: =20
         Y: =38
-        ZIndex: =15
+        ZIndex: =9
 
     btnCompleted As button:
         BorderColor: =RGBA(0, 0, 0, 0)
@@ -423,15 +464,38 @@
         DisabledBorderColor: =RGBA(0, 0, 0, 0)
         DisabledColor: =RGBA(161, 159, 157, 1)
         DisabledFill: =RGBA(242, 242, 241, 0)
-        Fill: =RGBA(54, 176, 75, 1)
+        Fill: =If(CountIf(colPQSGrade,IsCorrect= "Correct")+CountIf(colPQSGrade,IsCorrect= "Incorrect")+CountIf(colWIGrade,IsCorrect= "Correct")+CountIf(colWIGrade,IsCorrect= "Incorrect") < 20, Color.Gray,Color.Green)
         Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Semibold
         HoverBorderColor: =RGBA(0, 0, 0, 0)
         HoverColor: =RGBA(255, 255, 255, 1)
         HoverFill: =RGBA(16, 110, 190, 1)
         OnSelect: |
-            =If(
-                Confirm(User().FullName & ", Are you sure the Board is completed?"),
+            =Set(
+                varTotalAnswered,
+                CountIf(
+                    colPQSGrade,
+                    IsCorrect = "Correct"
+                ) + CountIf(
+                    colPQSGrade,
+                    IsCorrect = "Incorrect"
+                ) + CountIf(
+                    colWIGrade,
+                    IsCorrect = "Correct"
+                ) + CountIf(
+                    colWIGrade,
+                    IsCorrect = "Incorrect"
+                )
+            );
+            If(
+                Confirm(
+                    If(
+                        varTotalAnswered < 20,
+                        User().FullName & " Board is not complete (less than 20 answered). Are you sure you want to finish?",
+                        varTotalAnswered > 20,
+                        "Are you sure the Board is completed?"
+                    )
+                ),
                 Navigate(scrSummary)
             );
             Set(
@@ -475,28 +539,12 @@
             Patch(
                 EPIC_PQSBoardResults,
                 LookUp(
-                    EPIC_PQSBoardResults,
-                    BoardSessionID = varBoardSessionID
-                ),
-                {
-                    TotalCorrect: CountIf(
-                        colPQSGrade,
-                        IsCorrect = "Correct"
-                    ),
-                    TotalIncorrect: CountIf(
-                        colPQSGrade,
-                        IsCorrect = "Incorrect"
-                    ),
-                    BoardStatus: {
-                        Value: If(
-                            varCorrect >= 80,
-                            "Passed",
-                            "Failed"
-                        )
-                    },
-                    Date: Now()
-                }
-            );
+                    EPIC_PQSBoardResults,ID = VarSessionID),
+                    {BoardStatus: varBoardStatus,
+                    TimesRefreshed:varRefreshCount});
+                    
+            
+            
             // Build HTML
             Set(
                 varHTML,
@@ -523,7 +571,6 @@
                 '>
                     PQS RECORD - TEST USE ONLY
                 </div>
-            
             <!-- HEADER -->
             <table style='width:100%; border-collapse:collapse; margin-bottom:15px;'>
               
@@ -659,11 +706,11 @@
         RadiusTopLeft: =0
         RadiusTopRight: =0
         Size: =15
-        Text: ="Save & Complete"
+        Text: =If(CountIf(colPQSGrade,IsCorrect= "Correct")+CountIf(colPQSGrade,IsCorrect= "Incorrect")+CountIf(colWIGrade,IsCorrect= "Correct")+CountIf(colWIGrade,IsCorrect= "Incorrect") < 20, "Minimum not met", "Save & Complete")
         Width: =178
         X: =1141
         Y: =691
-        ZIndex: =16
+        ZIndex: =10
 
     "'lbl%B' As label":
         BorderColor: =RGBA(0, 0, 0, 0)
@@ -695,9 +742,9 @@
         Width: =167
         X: =23
         Y: =62
-        ZIndex: =20
+        ZIndex: =11
 
-    Button2 As button:
+    btnWriteInQuestion As button:
         BorderColor: =RGBA(0, 0, 0, 0)
         BorderStyle: =BorderStyle.None
         DisabledBorderColor: =RGBA(0, 0, 0, 0)
@@ -722,7 +769,7 @@
         Width: =176
         X: =814
         Y: =691
-        ZIndex: =21
+        ZIndex: =12
 
     ctWI As groupContainer.manualLayoutContainer:
         BorderColor: =RGBA(204, 218, 228, 1)
@@ -744,7 +791,7 @@
         Width: =1001
         X: =165
         Y: =190
-        ZIndex: =22
+        ZIndex: =13
 
         txtWIQuestion As text:
             BorderColor: =RGBA(245, 245, 245, 1)
@@ -846,7 +893,7 @@
             ChevronHoverBackground: =RGBA(245, 245, 245, 1)
             ChevronHoverFill: =RGBA(50, 49, 48, 1)
             Color: =RGBA(50, 49, 48, 1)
-            Default: ="0"
+            Default: ="-"
             DisabledBorderColor: =RGBA(0, 0, 0, 0)
             DisabledColor: =RGBA(161, 159, 157, 1)
             DisabledFill: =RGBA(242, 242, 241, 0)
@@ -855,7 +902,7 @@
             HoverBorderColor: =RGBA(16, 110, 190, 1)
             HoverColor: =RGBA(50, 49, 48, 1)
             HoverFill: =RGBA(245, 245, 245, 1)
-            Items: =["0","1","2","3","4"]
+            Items: =["-","0","1","2","3","4"]
             PaddingBottom: =5
             PaddingLeft: =12
             PaddingRight: =5
@@ -938,8 +985,8 @@
             HoverColor: =RGBA(255, 255, 255, 1)
             HoverFill: =RGBA(16, 110, 190, 1)
             OnSelect: |-
-                =If(IsBlank(txtWIQuestion.Text) And IsBlank(txtWIAnswer.Text),
-                Notify("Question and Answer required.",NotificationType.Error),
+                =If(IsBlank(txtWIQuestion.Text) Or IsBlank(txtWIAnswer.Text) Or Lower(Trim(txtWIQuestion.Text)) = "wi" Or Lower(Trim(txtWIAnswer.Text)) = "wi" Or drWIMod.Selected.Value = "-",
+                Notify("Question, Answer and Mod required.",NotificationType.Error),
                 
                     Collect(colWIGrade,
                     {
@@ -987,8 +1034,8 @@
             HoverColor: =RGBA(255, 255, 255, 1)
             HoverFill: =RGBA(16, 110, 190, 1)
             OnSelect: |-
-                =If(IsBlank(txtWIQuestion.Text) And IsBlank(txtWIAnswer.Text),
-                Notify("Question and Answer required.",NotificationType.Error),
+                =If(IsBlank(txtWIQuestion.Text) Or IsBlank(txtWIAnswer.Text) Or Lower(Trim(txtWIQuestion.Text)) = "wi" Or Lower(Trim(txtWIAnswer.Text)) = "wi" Or drWIMod.Selected.Value = "-",
+                Notify("Question, Answer and Mod required.",NotificationType.Error),
                 
                     Collect(colWIGrade,
                     {
@@ -1043,7 +1090,7 @@
             Y: =15
             ZIndex: =15
 
-        Button3 As button:
+        btnBackWI As button:
             BorderColor: =RGBA(0, 0, 0, 0)
             BorderStyle: =BorderStyle.None
             DisabledBorderColor: =RGBA(0, 0, 0, 0)
@@ -1081,5 +1128,5 @@
         Width: =376
         X: =990
         Y: =5
-        ZIndex: =23
+        ZIndex: =14
 

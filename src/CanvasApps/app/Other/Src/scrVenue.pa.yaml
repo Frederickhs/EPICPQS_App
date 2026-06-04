@@ -11,9 +11,9 @@ Screens:
     Properties:
       Fill: =RGBA(255, 255, 255, 1)
       LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
-      OnVisible: =Reset(ddLand)
+      OnVisible: =Reset(ddLand);Set(varRefreshCount, 0)
     Children:
-      - Image2:
+      - imgBack:
           Control: Image@2.2.3
           Properties:
             BorderColor: =RGBA(0, 0, 0, 0)
@@ -229,7 +229,7 @@ Screens:
             SelectionFill: =RGBA(0, 120, 212, 1)
             X: =325
             Y: =310
-      - Label2:
+      - lblUser:
           Control: Label@2.5.1
           Properties:
             Align: =Align.Center
@@ -246,3 +246,19 @@ Screens:
             Width: =588
             X: =103
             Y: =180
+      - lblUserTitle:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(161, 159, 157, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            Text: =Office365Users.MyProfile().JobTitle
+            Width: =588
+            X: =103
+            Y: =220

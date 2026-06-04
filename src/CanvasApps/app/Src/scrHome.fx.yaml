@@ -2,7 +2,7 @@ scrHome As screen:
     LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
     OnVisible: =Set(varVenue,lblVenue.Text)
 
-    Image2_1 As image:
+    imgBack2 As image:
         BorderColor: =RGBA(0, 0, 0, 0)
         BorderStyle: =BorderStyle.None
         BorderThickness: =2

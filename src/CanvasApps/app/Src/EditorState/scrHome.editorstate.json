@@ -763,7 +763,7 @@
       "StyleName": "defaultButtonStyle",
       "Type": "ControlInfo"
     },
-    "Image2_1": {
+    "imgBack2": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         "Image",
@@ -821,7 +821,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "Image2_1",
+      "Name": "imgBack2",
       "OptimizeForDevices": "Off",
       "ParentIndex": 0,
       "PersistMetaDataIDKey": false,

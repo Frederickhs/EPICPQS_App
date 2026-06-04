@@ -12,6 +12,22 @@ Screens:
       Fill: =RGBA(255, 255, 255, 1)
       LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
     Children:
+      - imgBannerBoard_1:
+          Control: Image@2.2.3
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Image: ='UEU-Logo-Nebula-BG_AdobeStock_209086800'
+            ImagePosition: =ImagePosition.Fill
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Width: =1366
       - galResult:
           Control: Gallery@2.15.0
           Variant: BrowseLayout_Vertical_TwoTextVariant_ver5.0
@@ -111,18 +127,6 @@ Screens:
                   OnSelect: =Select(Parent)
                   Visible: =ThisItem.IsSelected
                   Width: =4
-      - Rectangle3_2:
-          Control: Rectangle@2.3.0
-          Properties:
-            BorderColor: =RGBA(0, 0, 0, 0)
-            BorderStyle: =BorderStyle.None
-            BorderThickness: =2
-            DisabledFill: =RGBA(221, 79, 14, 1)
-            Fill: =RGBA(221, 79, 14, 1)
-            FocusedBorderThickness: =4
-            HoverFill: =RGBA(221, 79, 14, 1)
-            PressedFill: =RGBA(221, 79, 14, 1)
-            Width: =1366
       - lblPQSResult:
           Control: Label@2.5.1
           Properties:
@@ -195,7 +199,7 @@ Screens:
             HoverBorderColor: =RGBA(0, 0, 0, 0)
             HoverColor: =RGBA(255, 255, 255, 1)
             HoverFill: =RGBA(16, 110, 190, 1)
-            OnSelect: =Reset(varTech);Reset(varSup);Reset(varMng);Clear(colActiveMods);Clear(colWIGrade);Clear(colPQSGrade);Navigate(scrVenue)
+            OnSelect: =Reset(varTech);Reset(varSup);Reset(varMng);Clear(colActiveMods);Clear(colWIGrade);Clear(colPQSGrade);Navigate(scrVenue);
             PressedBorderColor: =RGBA(0, 69, 120, 1)
             PressedColor: =RGBA(255, 255, 255, 1)
             PressedFill: =RGBA(16, 110, 190, 1)
@@ -220,7 +224,7 @@ Screens:
             Width: =443
             X: =26
             Y: =680
-      - Container2:
+      - ctnWI:
           Control: GroupContainer@1.5.0
           Variant: ManualLayout
           Properties:

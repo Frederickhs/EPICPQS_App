@@ -1,6 +1,22 @@
 scrSummary As screen:
     LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
 
+    imgBannerBoard_1 As image:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Image: ='UEU-Logo-Nebula-BG_AdobeStock_209086800'
+        ImagePosition: =ImagePosition.Fill
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =1366
+        ZIndex: =1
+
     "galResult As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver5.0'":
         DelayItemLoading: =true
         Height: =538
@@ -25,7 +41,7 @@ scrSummary As screen:
         Width: =817
         X: =40
         Y: =122
-        ZIndex: =1
+        ZIndex: =2
 
         lblFinalQuestion As label:
             Color: =RGBA(50, 49, 48, 1)
@@ -101,18 +117,6 @@ scrSummary As screen:
             Width: =4
             ZIndex: =7
 
-    Rectangle3_2 As rectangle:
-        BorderColor: =RGBA(0, 0, 0, 0)
-        BorderStyle: =BorderStyle.None
-        BorderThickness: =2
-        DisabledFill: =RGBA(221, 79, 14, 1)
-        Fill: =RGBA(221, 79, 14, 1)
-        FocusedBorderThickness: =4
-        HoverFill: =RGBA(221, 79, 14, 1)
-        PressedFill: =RGBA(221, 79, 14, 1)
-        Width: =1366
-        ZIndex: =5
-
     lblPQSResult As label:
         Align: =Align.Center
         BorderColor: =RGBA(0, 0, 0, 0)
@@ -130,7 +134,7 @@ scrSummary As screen:
         Width: =939
         X: =26
         Y: =27
-        ZIndex: =6
+        ZIndex: =3
 
     "'lbl%' As label":
         BorderColor: =RGBA(0, 0, 0, 0)
@@ -151,7 +155,7 @@ scrSummary As screen:
         Width: =160
         X: =1164
         Y: =30
-        ZIndex: =8
+        ZIndex: =4
 
     lblResult As label:
         Align: =Align.Center
@@ -170,7 +174,7 @@ scrSummary As screen:
         Width: =98
         X: =1050
         Y: =30
-        ZIndex: =9
+        ZIndex: =5
 
     btnExit As button:
         BorderColor: =RGBA(0, 0, 0, 0)
@@ -184,7 +188,7 @@ scrSummary As screen:
         HoverBorderColor: =RGBA(0, 0, 0, 0)
         HoverColor: =RGBA(255, 255, 255, 1)
         HoverFill: =RGBA(16, 110, 190, 1)
-        OnSelect: =Reset(varTech);Reset(varSup);Reset(varMng);Clear(colActiveMods);Clear(colWIGrade);Clear(colPQSGrade);Navigate(scrVenue)
+        OnSelect: =Reset(varTech);Reset(varSup);Reset(varMng);Clear(colActiveMods);Clear(colWIGrade);Clear(colPQSGrade);Navigate(scrVenue);
         PressedBorderColor: =RGBA(0, 69, 120, 1)
         PressedColor: =RGBA(255, 255, 255, 1)
         PressedFill: =RGBA(16, 110, 190, 1)
@@ -196,7 +200,7 @@ scrSummary As screen:
         Text: ="Exit"
         X: =1164
         Y: =701
-        ZIndex: =10
+        ZIndex: =6
 
     htmlInfo As htmlViewer:
         AutoHeight: =true
@@ -211,9 +215,9 @@ scrSummary As screen:
         Width: =443
         X: =26
         Y: =680
-        ZIndex: =13
+        ZIndex: =7
 
-    Container2 As groupContainer.manualLayoutContainer:
+    ctnWI As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.Light
         Height: =538
         LayoutGridColumnMinWidth: =0
@@ -228,7 +232,7 @@ scrSummary As screen:
         Width: =480
         X: =866
         Y: =122
-        ZIndex: =14
+        ZIndex: =8
 
         Label10 As label:
             Align: =Align.Center

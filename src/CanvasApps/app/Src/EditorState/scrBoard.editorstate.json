@@ -1,6 +1,6 @@
 {
   "ControlStates": {
-    "btnExit_1": {
+    "btnExitB": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         {
@@ -76,7 +76,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "btnExit_1",
+      "Name": "btnExitB",
       "OptimizeForDevices": "Off",
       "ParentIndex": 13,
       "PersistMetaDataIDKey": false,
@@ -1357,7 +1357,7 @@
       "StyleName": "defaultImageStyle",
       "Type": "ControlInfo"
     },
-    "Image11_2": {
+    "imgEUB": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         "Image",
@@ -1415,7 +1415,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "Image11_2",
+      "Name": "imgEUB",
       "OptimizeForDevices": "Off",
       "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
@@ -1649,7 +1649,7 @@
       "StyleName": "defaultImageStyle",
       "Type": "ControlInfo"
     },
-    "Image11_3": {
+    "imgUORB": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         "Image",
@@ -1707,7 +1707,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "Image11_3",
+      "Name": "imgUORB",
       "OptimizeForDevices": "Off",
       "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
@@ -2720,6 +2720,14 @@
           "InvariantPropertyName": "HintText",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
+        },
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "true",
+          "InvariantPropertyName": "Visible",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
         }
       ],
       "HasDynamicProperties": false,
@@ -2930,6 +2938,11 @@
           "Category": "Design",
           "PropertyName": "Strikethrough",
           "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "Visible",
+          "RuleProviderType": "User"
         }
       ],
       "StyleName": "defaultTextStyle",
@@ -3374,6 +3387,14 @@
           "InvariantPropertyName": "HintText",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
+        },
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "true",
+          "InvariantPropertyName": "Visible",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
         }
       ],
       "HasDynamicProperties": false,
@@ -3584,6 +3605,11 @@
           "Category": "Design",
           "PropertyName": "Strikethrough",
           "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "Visible",
+          "RuleProviderType": "User"
         }
       ],
       "StyleName": "defaultTextStyle",
@@ -4021,6 +4047,14 @@
           "InvariantPropertyName": "HintText",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
+        },
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "true",
+          "InvariantPropertyName": "Visible",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
         }
       ],
       "HasDynamicProperties": false,
@@ -4231,6 +4265,11 @@
           "Category": "Design",
           "PropertyName": "Strikethrough",
           "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "Visible",
+          "RuleProviderType": "User"
         }
       ],
       "StyleName": "defaultTextStyle",

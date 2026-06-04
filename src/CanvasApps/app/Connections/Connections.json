@@ -68,50 +68,6 @@
     "dependents": [],
     "id": "066102f3-3a28-4123-83cd-9b66f11b9066"
   },
-  "16e3a31d-fa6a-4614-93b9-243961196d15": {
-    "appActions": [
-      "Run"
-    ],
-    "connectionRef": {
-      "apiTier": "Standard",
-      "displayName": "Logic flows",
-      "iconUri": "https://conn-afd-prod-endpoint-bmc9bqahasf3grgk.b01.azurefd.net/v1.0.1774/1.0.1774.4397/logicflows/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
-      "parameterHints": {
-        "d54a52de-e43b-4d78-af7d-31bbaadb8a09": {
-          "value": "shared_sharepointonline"
-        },
-        "workflowDisplayName": {
-          "value": "SessionPatch"
-        },
-        "workflowEntityId": {},
-        "workflowName": {
-          "value": "c8ef0996-c03b-4586-b6f3-5c5ba8258c0f"
-        }
-      },
-      "parameterHintsV2": {
-        "shared_sharepointonline": {
-          "value": "d54a52de-e43b-4d78-af7d-31bbaadb8a09"
-        },
-        "workflowDisplayName": {
-          "value": "SessionPatch"
-        },
-        "workflowEntityId": {},
-        "workflowName": {
-          "value": "c8ef0996-c03b-4586-b6f3-5c5ba8258c0f"
-        }
-      }
-    },
-    "datasets": {},
-    "dataSources": [
-      "SessionPatch"
-    ],
-    "dependencies": {
-      "shared_sharepointonline": "d54a52de-e43b-4d78-af7d-31bbaadb8a09"
-    },
-    "dependents": [],
-    "id": "16e3a31d-fa6a-4614-93b9-243961196d15"
-  },
   "4a56e736-94ee-49c0-a3ac-8a745af3da38": {
     "appActions": [],
     "connectionRef": {
@@ -181,6 +137,54 @@
     "dependencies": {},
     "dependents": [],
     "id": "649d97ad-f367-4e3e-897c-b39e2e0a19da"
+  },
+  "aaf08054-939e-43d2-8152-73b21231ab63": {
+    "appActions": [
+      "Run"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Logic flows",
+      "iconUri": "https://conn-afd-prod-endpoint-bmc9bqahasf3grgk.b01.azurefd.net/v1.0.1774/1.0.1774.4397/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "d54a52de-e43b-4d78-af7d-31bbaadb8a09": {
+          "value": "shared_sharepointonline"
+        },
+        "workflowDisplayName": {
+          "value": "SessionPatch"
+        },
+        "workflowEntityId": {
+          "value": "cf2a5c71-315f-f111-a826-002248089128"
+        },
+        "workflowName": {
+          "value": "c8ef0996-c03b-4586-b6f3-5c5ba8258c0f"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_sharepointonline": {
+          "value": "d54a52de-e43b-4d78-af7d-31bbaadb8a09"
+        },
+        "workflowDisplayName": {
+          "value": "SessionPatch"
+        },
+        "workflowEntityId": {
+          "value": "cf2a5c71-315f-f111-a826-002248089128"
+        },
+        "workflowName": {
+          "value": "c8ef0996-c03b-4586-b6f3-5c5ba8258c0f"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "SessionPatch"
+    ],
+    "dependencies": {
+      "shared_sharepointonline": "d54a52de-e43b-4d78-af7d-31bbaadb8a09"
+    },
+    "dependents": [],
+    "id": "aaf08054-939e-43d2-8152-73b21231ab63"
   },
   "d54a52de-e43b-4d78-af7d-31bbaadb8a09": {
     "appActions": [
@@ -297,7 +301,7 @@
     ],
     "dependencies": {},
     "dependents": [
-      "16e3a31d-fa6a-4614-93b9-243961196d15"
+      "aaf08054-939e-43d2-8152-73b21231ab63"
     ],
     "id": "d54a52de-e43b-4d78-af7d-31bbaadb8a09"
   },

@@ -86,6 +86,7 @@ scrBoard As screen:
         RadiusTopLeft: =0
         RadiusTopRight: =0
         Size: =13
+        Visible: =!IsBlank(txtTechSSO.Text)
         X: =204
         Y: =216
         ZIndex: =3
@@ -115,6 +116,7 @@ scrBoard As screen:
         RadiusTopLeft: =0
         RadiusTopRight: =0
         Size: =13
+        Visible: =!IsBlank(txtManagerSSO.Text)
         X: =204
         Y: =517
         ZIndex: =4
@@ -144,6 +146,7 @@ scrBoard As screen:
         RadiusTopLeft: =0
         RadiusTopRight: =0
         Size: =13
+        Visible: =!IsBlank(txtSupSSO.Text)
         X: =204
         Y: =362
         ZIndex: =5
@@ -193,14 +196,16 @@ scrBoard As screen:
             )
             ;
             Navigate(scrFullON);Reset(txtWIAnswer);Reset(txtWIQuestion);Reset(drWIMod);
+            
+            
+            Set(VarSessionID,
             SessionPatch.Run(  
-                varBoardSessionID,
                 varTech.Text,
                 varMng.Text,
                 varSup.Text,
                 varVenueSelected,
                 Text(Now())
-            )
+            ).sessionid)
         PressedBorderColor: =RGBA(0, 69, 120, 1)
         PressedColor: =RGBA(255, 255, 255, 1)
         PressedFill: =RGBA(16, 110, 190, 1)
@@ -210,9 +215,7 @@ scrBoard As screen:
         RadiusTopRight: =0
         Size: =15
         Text: ="Start"
-        Visible: |
-            =//!IsBlank(rdPQS.Selected.Value)
-            true
+        Visible: =!IsBlank(rdPQS.Selected.Value)&& !IsBlank(txtSupSSO.Text)&& !IsBlank(txtManagerSSO.Text) &&!IsBlank(txtTechSSO.Text)
         X: =580
         Y: =528
         ZIndex: =6
@@ -261,7 +264,7 @@ scrBoard As screen:
         Y: =48
         ZIndex: =8
 
-    Image11_2 As image:
+    imgEUB As image:
         BorderColor: =RGBA(0, 0, 0, 0)
         BorderStyle: =BorderStyle.None
         BorderThickness: =2
@@ -279,7 +282,7 @@ scrBoard As screen:
         Y: =20
         ZIndex: =9
 
-    Image11_3 As image:
+    imgUORB As image:
         BorderColor: =RGBA(0, 0, 0, 0)
         BorderStyle: =BorderStyle.None
         BorderThickness: =2
@@ -297,7 +300,7 @@ scrBoard As screen:
         Y: =20
         ZIndex: =10
 
-    btnExit_1 As button:
+    btnExitB As button:
         BorderColor: =RGBA(0, 0, 0, 0)
         BorderStyle: =BorderStyle.None
         DisabledBorderColor: =RGBA(0, 0, 0, 0)

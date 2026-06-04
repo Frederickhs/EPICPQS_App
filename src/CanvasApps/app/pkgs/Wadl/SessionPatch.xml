@@ -2,20 +2,23 @@
   <doc title="SessionPatch" />
   <grammars>
     <jsonTypes targetNamespace="https://unitedstates-002.azure-apim.net/apim/logicflows" xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
-      <string name="ManualTriggerInput_text_def" />
       <string name="ManualTriggerInput_text_1_def" />
       <string name="ManualTriggerInput_text_2_def" />
       <string name="ManualTriggerInput_text_3_def" />
       <string name="ManualTriggerInput_text_5_def" />
       <string name="ManualTriggerInput_text_6_def" />
       <object name="ManualTriggerInput">
-        <property name="text" type="string" />
         <property name="text_1" type="string" />
         <property name="text_2" type="string" />
         <property name="text_3" type="string" />
         <property name="text_5" type="string" />
         <property name="text_6" type="string" />
       </object>
+      <number name="ResponseActionOutput_sessionid_def" />
+      <object name="ResponseActionOutput">
+        <property name="sessionid" type="number" />
+      </object>
+      <object name="Run_responses_default_def" />
     </jsonTypes>
   </grammars>
   <resources siena:authenticationProviderHref="#PowerAppAuth" base="https://unitedstates-002.azure-apim.net/apim/logicflows">
@@ -28,9 +31,6 @@
             <doc title="The api version" />
           </param>
           <representation mediaType="application/json">
-            <param style="plain" name="text" path="/text" type="xs:string" required="true">
-              <doc title="BoardSessionID" />
-            </param>
             <param style="plain" name="text_1" path="/text_1" type="xs:string" required="true">
               <doc title="TechName" />
             </param>
@@ -48,6 +48,9 @@
             </param>
           </representation>
         </request>
+        <response>
+          <representation mediaType="application/json" element="service:ResponseActionOutput" />
+        </response>
       </method>
     </resource>
   </resources>
