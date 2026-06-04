@@ -487,6 +487,8 @@
                     IsCorrect = "Incorrect"
                 )
             );
+            
+            // Review any more options to make this more understandable
             If(
                 Confirm(
                     If(
