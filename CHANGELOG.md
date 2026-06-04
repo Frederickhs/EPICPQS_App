@@ -10,7 +10,7 @@ This project follows a **controlled update model**:
 ---
 ## [v2.0.0] – 6/3/26 - App updated for All of EPIC Universe, 1 app for all venues
 
-**Status:** Approved & Published
+**Status:** Approved
 
 ### Added
 - Now all the venues can be accesed by a single app
