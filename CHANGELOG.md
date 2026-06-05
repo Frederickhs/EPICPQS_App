@@ -5,7 +5,7 @@ All notable changes to the **PQS Board Template** are documented in this file.
 This project follows a **controlled update model**:
 
 - Logic changes are versioned
-- Venue implementations should reference the template version in use
+- Implementations should reference the template version in use
 - Non‑logical changes are explicitly noted
 
 ---
