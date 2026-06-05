@@ -35,7 +35,9 @@ This project follows a **controlled update model**:
 
 ---
 
-## Previous Versions
+<details>
+
+<summary> Previous Versions </summary>
 
 ## [v2.0.0] – 6/3/26 - App updated for All of EPIC Universe, 1 app for all venues
 
@@ -195,6 +197,8 @@ Now once the Name of the Venue is added, it will update on:
   1. Committed to the template repository
   2. Reflected in this changelog
   3. Released under an explicit version number
+
+</details>
 
 ## Versioning Explanation
 
