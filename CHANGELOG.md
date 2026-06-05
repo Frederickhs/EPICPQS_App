@@ -200,7 +200,9 @@ Now once the Name of the Venue is added, it will update on:
 
 </details>
 
-## Versioning Explanation
+<details>
+
+<summary> Versioning Explanation </summary>
 
 This repository uses **Semantic Versioning** in the format:
 ``MAJOR.MINOR.PATCH``
@@ -254,4 +256,4 @@ Examples of PATCH changes:
 - Correcting a label or comment
 - Cleaning up non‑functional formulas
 - Clarifying variable names without changing logic
-
+</details>
