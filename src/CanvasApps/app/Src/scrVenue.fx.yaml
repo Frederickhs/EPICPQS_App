@@ -254,7 +254,7 @@ scrVenue As screen:
         Y: =220
         ZIndex: =7
 
-    Label1 As label:
+    lvlVersion As label:
         BorderColor: =RGBA(0, 0, 0, 0)
         BorderStyle: =BorderStyle.None
         BorderThickness: =2
@@ -265,7 +265,7 @@ scrVenue As screen:
         Font: =Font.'Segoe UI'
         Height: =17
         Size: =10
-        Text: ="V-2.1.0"
+        Text: ="V-2.1.1"
         Width: =51
         X: =1315
         Y: =750

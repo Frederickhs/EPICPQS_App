@@ -320,7 +320,7 @@ scrPReview As screen:
         HoverBorderColor: =RGBA(0, 0, 0, 0)
         HoverColor: =RGBA(255, 255, 255, 1)
         HoverFill: =RGBA(16, 110, 190, 1)
-        OnSelect: =Navigate(scrHome)
+        OnSelect: =Navigate(scrVenue)
         PressedBorderColor: =RGBA(0, 69, 120, 1)
         PressedColor: =RGBA(255, 255, 255, 1)
         PressedFill: =RGBA(16, 110, 190, 1)
@@ -329,7 +329,7 @@ scrPReview As screen:
         RadiusTopLeft: =0
         RadiusTopRight: =0
         Size: =15
-        Text: ="Back"
+        Text: ="Exit"
         X: =64
         Y: =711
         ZIndex: =12

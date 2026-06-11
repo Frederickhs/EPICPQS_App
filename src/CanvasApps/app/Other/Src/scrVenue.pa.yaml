@@ -262,7 +262,7 @@ Screens:
             Width: =588
             X: =103
             Y: =220
-      - Label1:
+      - lvlVersion:
           Control: Label@2.5.1
           Properties:
             BorderColor: =RGBA(0, 0, 0, 0)
@@ -275,7 +275,7 @@ Screens:
             Font: =Font.'Segoe UI'
             Height: =17
             Size: =10
-            Text: ="V-2.1.0"
+            Text: ="V-2.1.1"
             Width: =51
             X: =1315
             Y: =750
