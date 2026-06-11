@@ -16,13 +16,13 @@ This project follows a **controlled update model**:
 
 ### Added
 
-- Updated Patch for column BoardType in list.
-- Updated Trainer name for trainer reviews.
+- Updated Patch for column ```BoardType``` in list.
+- Updated Trainername for trainer reviews.
 - Updated Board Status in Result List.
 
 ### Fixed
 
-- Changed Summary screen % lbl.
+- Changed %lbl n ```scrSummary```.
 - Changed behavior on multiple Back btns.
 - Removed Auto select Mod 0 on Reviews and scrFullON.
 - Changed total of questions in Reviews.
