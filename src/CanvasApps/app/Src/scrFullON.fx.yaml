@@ -1,6 +1,6 @@
 "scrFullON As screen.'autoLayout_HeaderFooter_ver1.0'":
     LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
-    OnVisible: =Set(varSelectedMod,"0");Clear(colPQSGrade);Set(varMaxCorrect,20);Set(varMaxIncorrect,4);CountIf(colPQSGrade,IsCorrect="Correct");CountIf(colPQSGrade,IsCorrect="Incorrect");Select(btnRefreshBoard)
+    OnVisible: =Clear(colPQSGrade);Set(varMaxCorrect,20);Set(varMaxIncorrect,4);CountIf(colPQSGrade,IsCorrect="Correct");CountIf(colPQSGrade,IsCorrect="Incorrect");Select(btnRefreshBoard)
 
     imgBannerBoard As image:
         BorderColor: =RGBA(0, 0, 0, 0)
@@ -26,7 +26,7 @@
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
         TemplatePadding: =0
-        TemplateSize: =242
+        TemplateSize: =336
         Width: =1275
         X: =44
         Y: =217
@@ -119,18 +119,18 @@
             DisabledColor: =RGBA(161, 159, 157, 1)
             Font: =Font.'Segoe UI'
             FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-            Height: =152
+            Height: =201
             OnSelect: =Select(Parent)
             PaddingBottom: =0
             PaddingLeft: =12
             PaddingRight: =0
             PaddingTop: =0
-            Size: =12
+            Size: =15
             Text: =ThisItem.Answer
             VerticalAlign: =VerticalAlign.Top
             Width: =txtQuestion_1.Width
             X: =txtQuestion_1.X
-            Y: =txtQuestion_1.Y + txtQuestion_1.Height
+            Y: =122
             ZIndex: =6
 
         txtQuestion_1 As label:
@@ -138,12 +138,13 @@
             DisabledColor: =RGBA(161, 159, 157, 1)
             Font: =Font.'Segoe UI'
             FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-            Height: =50
+            Height: =105
             OnSelect: =Select(Parent)
             PaddingBottom: =0
             PaddingLeft: =12
             PaddingRight: =0
             PaddingTop: =0
+            Size: =20
             Text: =ThisItem.Question
             VerticalAlign: =VerticalAlign.Top
             Width: =907
@@ -406,7 +407,7 @@
         HoverBorderColor: =RGBA(0, 0, 0, 0)
         HoverColor: =RGBA(255, 255, 255, 1)
         HoverFill: =RGBA(16, 110, 190, 1)
-        OnSelect: =Clear(colActiveMods);Navigate(scrHome);Reset(rdPQS)
+        OnSelect: =Clear(colActiveMods);Navigate(scrVenue);Reset(rdPQS)
         PressedBorderColor: =RGBA(0, 69, 120, 1)
         PressedColor: =RGBA(255, 255, 255, 1)
         PressedFill: =RGBA(16, 110, 190, 1)
@@ -541,7 +542,8 @@
                 LookUp(
                     EPIC_PQSBoardResults,ID = VarSessionID),
                     {BoardStatus: varBoardStatus,
-                    TimesRefreshed:varRefreshCount});
+                    TimesRefreshed:varRefreshCount,
+                    BoardType:"Board"});
                     
             
             
@@ -569,7 +571,7 @@
                     z-index: 1;
                     white-space: nowrap;
                 '>
-                    PQS RECORD - TEST USE ONLY
+                    PQS - TEST USE ONLY
                 </div>
             <!-- HEADER -->
             <table style='width:100%; border-collapse:collapse; margin-bottom:15px;'>
@@ -1081,7 +1083,7 @@
             HoverColor: =RGBA(16, 110, 190, 1)
             HoverFill: =RGBA(0, 0, 0, 0)
             Icon: =Icon.Cancel
-            OnSelect: =Reset(drWIMod);Reset(txtWIAnswer);Reset(txtWIQuestion);Set(varShowWIPopup,false)
+            OnSelect: =If(Confirm(User().FullName & ", Are you sure you want to cancel?"),Reset(txtWIAnswer);Reset(txtWIQuestion);Reset(drWIMod);Set(varShowWIPopup,false))
             PressedBorderColor: =RGBA(0, 0, 0, 0)
             PressedColor: =RGBA(16, 110, 190, 1)
             PressedFill: =RGBA(0, 0, 0, 0)
@@ -1089,33 +1091,6 @@
             X: =960
             Y: =15
             ZIndex: =15
-
-        btnBackWI As button:
-            BorderColor: =RGBA(0, 0, 0, 0)
-            BorderStyle: =BorderStyle.None
-            DisabledBorderColor: =RGBA(0, 0, 0, 0)
-            DisabledColor: =RGBA(161, 159, 157, 1)
-            DisabledFill: =RGBA(242, 242, 241, 0)
-            Fill: =RGBA(128, 128, 128, 1)
-            Font: =Font.'Segoe UI'
-            FontWeight: =FontWeight.Semibold
-            HoverBorderColor: =RGBA(0, 0, 0, 0)
-            HoverColor: =RGBA(255, 255, 255, 1)
-            HoverFill: =RGBA(16, 110, 190, 1)
-            OnSelect: =If(Confirm(User().FullName & " Are you sure you want to cancel?"),Reset(txtWIAnswer);Reset(txtWIQuestion);Reset(drWIMod);Set(varShowWIPopup,false))
-            PressedBorderColor: =RGBA(0, 69, 120, 1)
-            PressedColor: =RGBA(255, 255, 255, 1)
-            PressedFill: =RGBA(16, 110, 190, 1)
-            RadiusBottomLeft: =0
-            RadiusBottomRight: =0
-            RadiusTopLeft: =0
-            RadiusTopRight: =0
-            Size: =15
-            Text: ="Back"
-            Width: =100
-            X: =874
-            Y: =348
-            ZIndex: =16
 
     htmlBoardInfo As htmlViewer:
         Color: =RGBA(255, 255, 255, 1)

@@ -124,7 +124,7 @@
           "inputs": {
             "parameters": {
               "emailMessage/MailboxAddress": "EpicRSTrainers@uniparks.com",
-              "emailMessage/To": "EpicRSTrainers@uniparks.com",
+              "emailMessage/To": "Frederick.Herrera@universalorlando.com;Melissa.Cruz@UniversalOrlando.com",
               "emailMessage/Subject": "Test PDF",
               "emailMessage/Body": "<p class=\"editor-paragraph\">Please ignore this email</p>",
               "emailMessage/Attachments": [

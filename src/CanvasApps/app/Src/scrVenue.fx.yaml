@@ -231,7 +231,7 @@ scrVenue As screen:
         Font: =Font.'Segoe UI'
         Size: =13
         Text: |
-            ="Hello " & User().FullName & ", Please make a selection."
+            ="Hello, " & User().FullName & " Please make a selection."
         Width: =588
         X: =103
         Y: =180

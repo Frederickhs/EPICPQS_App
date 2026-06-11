@@ -4,7 +4,7 @@
     "connectionRef": {
       "apiTier": "Standard",
       "displayName": "OneDrive for Business",
-      "iconUri": "https://conn-afd-prod-endpoint-bmc9bqahasf3grgk.b01.azurefd.net/releases/v1.0.1802/1.0.1802.4667/onedriveforbusiness/icon.png",
+      "iconUri": "https://static.powerapps.com/resource/ppcr/releases/v1.0.1814/1.0.1814.4751/onedriveforbusiness/icon.png",
       "id": "/providers/microsoft.powerapps/apis/shared_onedriveforbusiness",
       "parameterHints": {},
       "parameterHintsV2": {}
@@ -194,7 +194,7 @@
     "connectionRef": {
       "apiTier": "Standard",
       "displayName": "SharePoint",
-      "iconUri": "https://static.powerapps.com/resource/ppcr/releases/v1.0.1809/1.0.1809.4723/sharepointonline/icon.png",
+      "iconUri": "https://static.powerapps.com/resource/ppcr/releases/v1.0.1813/1.0.1813.4743/sharepointonline/icon.png",
       "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
       "parameterHints": {},
       "parameterHintsV2": {}

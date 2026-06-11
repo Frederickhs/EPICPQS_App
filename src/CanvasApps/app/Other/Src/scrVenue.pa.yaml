@@ -242,7 +242,7 @@ Screens:
             FocusedBorderThickness: =4
             Font: =Font.'Segoe UI'
             Text: |+
-              ="Hello " & User().FullName & ", Please make a selection."
+              ="Hello, " & User().FullName & " Please make a selection."
             Width: =588
             X: =103
             Y: =180
