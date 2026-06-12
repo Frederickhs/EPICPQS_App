@@ -750,7 +750,7 @@ Screens:
                   HoverColor: =RGBA(255, 255, 255, 1)
                   HoverFill: =RGBA(16, 110, 190, 1)
                   OnSelect: |-
-                    =If(IsBlank(txtWIQuestion.Text) Or IsBlank(txtWIAnswer.Text) Or Lower(Trim(txtWIQuestion.Text)) = "wi" Or Lower(Trim(txtWIAnswer.Text)) = "wi" Or drWIMod.Selected.Value = "-",
+                    =If(IsBlank(txtWIQuestion.Text) Or IsBlank(txtWIAnswer.Text) Or Lower(Trim(txtWIQuestion.Text)) = "wi" Or Lower(Trim(txtWIAnswer.Text)) = "wi" Or drWIMod.Selected.Value = "-" Or Lower(Trim(txtWIQuestion.Text)) = "Write-In" Or Lower(Trim(txtWIQuestion.Text)) = "Write In" Or Lower(Trim(txtWIAnswer.Text)) = "correct" Or Lower(Trim(txtWIAnswer.Text)) = "incorrect",
                     Notify("Question, Answer and Mod required.",NotificationType.Error),
 
                         Collect(colWIGrade,
