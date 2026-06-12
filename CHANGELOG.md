@@ -16,8 +16,8 @@ This project follows a **controlled update model**:
 
 ### Added
 
-- On WI now ```Write-In``` and ```Write In``` are not an acceptable input for Question
-- On WI now ```Yes``` and ```No``` are not an acceptable input for Answers
+- On WI now "Write-In" and "Write In" are not an acceptable input for Question
+- On WI now "Yes" and "No" are not an acceptable input for Answers
 
 >[!IMPORTANT]
 >This version is not stable yet, more work needs to be done before it goes live to production
