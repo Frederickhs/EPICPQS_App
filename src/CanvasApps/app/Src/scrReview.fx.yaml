@@ -44,7 +44,7 @@
             HoverBorderColor: =RGBA(0, 0, 0, 0)
             HoverColor: =RGBA(255, 255, 255, 1)
             HoverFill: =RGBA(16, 110, 190, 1)
-            OnSelect: =Set(varSelectedMod,ThisItem.Value)
+            OnSelect: =Set(varSelectedMod,ThisItem.Value); Set(varRModBro, false)
             PressedBorderColor: =RGBA(0, 69, 120, 1)
             PressedColor: =RGBA(255, 255, 255, 1)
             PressedFill: =RGBA(16, 110, 190, 1)
@@ -241,10 +241,13 @@
                     4,
                     35,
                     5,
-                    37,
-                    37
+                    60,
+                    60
                 )
             );
+            
+            // Here to change the number of Mod 0 Questions
+            
             Set(
                 varMod0Count,
                 5
@@ -264,9 +267,12 @@
                     0
                 )
             );
+            
+            // Here to change the number of A Questions, B questions will be the difference to reach the Max number of questions to be asked
+            
             Set(
                 varCatACount,
-                3
+                4
             );
             Set(
                 varCatBCount,

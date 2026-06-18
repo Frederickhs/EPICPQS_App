@@ -9,7 +9,7 @@
 Screens:
   scrBoard:
     Properties:
-      Fill: =RGBA(255, 255, 255, 1)
+      Fill: =RGBA(255,255,255,1)
       LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
       OnVisible: =Reset(rdPQS);Reset(txtSupSSO);Reset(txtManagerSSO);Reset(txtTech);Reset(txtTechSSO)
     Children:
@@ -168,46 +168,10 @@ Screens:
             HoverBorderColor: =RGBA(0, 0, 0, 0)
             HoverColor: =RGBA(255, 255, 255, 1)
             HoverFill: =RGBA(16, 110, 190, 1)
-            OnSelect: |
-              =Set(
-                  varTech,
-                  txtTech
-              );
-              Set(
-                  varMng,
-                  txtManager
-              );
-              Set(
-                  varSup,
-                  txtSupervisor
-              );
-              Set(
-                  varBoardType,
-                  rdPQS.SelectedText
-              );
-              Clear(colPQSGrade);
-              Clear(colWIGrade);
+            OnSelect: |-
+              =Set(varTech,txtTech);Set(varModBro, true );Set(varMng,txtManager);Set(varSup,txtSupervisor);Set(varBoardType,rdPQS.SelectedText);Clear(colPQSGrade);Clear(colWIGrade);
               //Creates the Report
-              Set(
-                  varBoardSessionID,
-                  Text(GUID())
-              );
-              Set(
-                  varVenueSelected,
-                  ddVenue.SelectedText.Value
-              )
-              ;
-              Navigate(scrFullON);Reset(txtWIAnswer);Reset(txtWIQuestion);Reset(drWIMod);
-
-
-              Set(VarSessionID,
-              SessionPatch.Run(  
-                  varTech.Text,
-                  varMng.Text,
-                  varSup.Text,
-                  varVenueSelected,
-                  Text(Now())
-              ).sessionid)
+              Set(varBoardSessionID,Text(GUID()));Set(varVenueSelected,ddVenue.SelectedText.Value);Navigate(scrFullON);Reset(txtWIAnswer);Reset(txtWIQuestion);Reset(drWIMod);Set(VarSessionID,SessionPatch.Run(varTech.Text,varMng.Text,varSup.Text,varVenueSelected,Text(Now())).sessionid)
             PressedBorderColor: =RGBA(0, 69, 120, 1)
             PressedColor: =RGBA(255, 255, 255, 1)
             PressedFill: =RGBA(16, 110, 190, 1)
@@ -216,7 +180,7 @@ Screens:
             RadiusTopLeft: =0
             RadiusTopRight: =0
             Text: ="Start"
-            Visible: =!IsBlank(rdPQS.Selected.Value)&& !IsBlank(txtSupSSO.Text)&& !IsBlank(txtManagerSSO.Text) &&!IsBlank(txtTechSSO.Text)
+            Visible: =!IsBlank(rdPQS.Selected.Value) && !IsBlank(txtSupervisor.Text) && !IsBlank(txtManager.Text) && !IsBlank(txtTech.Text) && (rdPQS.Selected.Value <> "Partial PQS" Or Checkbox4.Value)
             X: =580
             Y: =528
       - rdPQS:

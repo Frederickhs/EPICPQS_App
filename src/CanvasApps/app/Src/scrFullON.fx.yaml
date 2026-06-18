@@ -178,7 +178,7 @@
             HoverBorderColor: =RGBA(0, 0, 0, 0)
             HoverColor: =RGBA(255, 255, 255, 1)
             HoverFill: =RGBA(16, 110, 190, 1)
-            OnSelect: =Set(varSelectedMod,ThisItem.Value)
+            OnSelect: =Set(varSelectedMod,ThisItem.Value); Set(varModBro, false)
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
@@ -265,12 +265,16 @@
             );
             
             // ===== CATEGORY SPLIT =====
+            
+            // Here to set the number of A Questions
+            
             Set(
                 varCatACount,
                 If(
                     varNonZeroModCount = 1,
                     RoundDown(varQuestionsPerMod / 2, 0),
-                    5
+                    3
+            
                 )
             );
             
@@ -390,7 +394,7 @@
         Height: =52
         Size: =18
         Text: =varVenue
-        Width: =800
+        Width: =764
         X: =190
         Y: =24
         ZIndex: =6
@@ -488,6 +492,9 @@
                     IsCorrect = "Incorrect"
                 )
             );
+            
+            //This is the message of the board being completed, the PDF will send no mather what
+            
             If(
                 Confirm(
                     If(
@@ -536,7 +543,8 @@
                     "Failed"
                 )
             );
-            //Information for Report
+            //Information for Report, this will update the List
+            
             Patch(
                 EPIC_PQSBoardResults,
                 LookUp(
@@ -547,7 +555,8 @@
                     
             
             
-            // Build HTML
+            // Build HTML for the PDF, all edits on the PDF are made here
+            
             Set(
                 varHTML,
                 "<html>
@@ -561,6 +570,7 @@
             </style>
             </head>
             <body>
+            
             <!-- Watermark -->
                 <div style='position: absolute;
                     top: 50%;
@@ -573,6 +583,10 @@
                 '>
                     PQS - TEST USE ONLY
                 </div>
+            
+            
+            
+            
             <!-- HEADER -->
             <table style='width:100%; border-collapse:collapse; margin-bottom:15px;'>
               
@@ -688,7 +702,11 @@
             </body>
             </html>"
             );
+            
+            
             // Send email
+            
+            
             TestPQS_Email_PDF.Run(
                 varHTML,
                 "PQS_Board_" & ddVenue.SelectedText.Value & "_" & txtTech.Text & "_" & Text(
@@ -904,7 +922,7 @@
             HoverBorderColor: =RGBA(16, 110, 190, 1)
             HoverColor: =RGBA(50, 49, 48, 1)
             HoverFill: =RGBA(245, 245, 245, 1)
-            Items: =["-","0","1","2","3","4"]
+            Items: =colActiveMods
             PaddingBottom: =5
             PaddingLeft: =12
             PaddingRight: =5
@@ -1100,8 +1118,33 @@
         HtmlText: |-
             ="<b>Manager: </b>" & txtManager.Text&"<br><b>Supervisor: </b>" & txtSupervisor.Text & "<br><b>Tech: </b>" & txtTech.Text
         Size: =13
-        Width: =376
-        X: =990
+        Width: =399
+        X: =967
         Y: =5
         ZIndex: =14
+
+    ModBro As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(50, 49, 48, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(161, 159, 157, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Bold
+        Height: =312
+        Size: =55
+        Text: ="Bro select a Mod WTF"
+        Visible: |-
+            =//varModBro
+            
+            //true
+            
+            false
+        Width: =925
+        X: =80
+        Y: =260
+        ZIndex: =15
 
