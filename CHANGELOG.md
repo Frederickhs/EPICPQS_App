@@ -10,6 +10,24 @@ This project follows a **controlled update model**:
 
 ---
 
+## [v2.1.3] – 6/18/26 - Changes on Functions in the App
+
+**Status:** Approved
+
+### Added
+
+- For WI, it shows only active Mods.
+- btnStart for Boards and Reviews need NameText to be shown.
+- When a partial PQS is selected, it requires a mod selection to start.
+- On scrVenue btnNex is visible after selecting a Land AND a Venue.
+- Changed total of questions for Reviews.
+
+---
+
+<details>
+
+<summary> Previous Versions </summary>
+
 ## [v2.1.2] – 6/11/26 - Changes on Functions in the App
 
 **Status:** Approved
@@ -21,12 +39,6 @@ This project follows a **controlled update model**:
 
 >[!IMPORTANT]
 >This version is not stable yet, more work needs to be done before it goes live to production
-
----
-
-<details>
-
-<summary> Previous Versions </summary>
 
 ## [v2.1.1] – 6/11/26 - Changes on the UI and Functions in the App
 
