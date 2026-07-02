@@ -1,7 +1,7 @@
 "scrReview As screen.'autoLayout_HeaderFooter_ver1.0'":
     LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
     OnVisible: |
-        =Select(btnRefreshR);
+        =Select(btnRefreshR);Set(varSelectedMod,"0")
 
     imgBannerReview As image:
         BorderColor: =RGBA(0, 0, 0, 0)
@@ -37,7 +37,8 @@
             DisabledBorderColor: =RGBA(0, 0, 0, 0)
             DisabledColor: =RGBA(161, 159, 157, 1)
             DisabledFill: =RGBA(242, 242, 241, 0)
-            Fill: =RGBA(0, 120, 212, 1)
+            Fill: |-
+                =If(ThisItem.Value = varSelectedMod, ColorValue("#0078D4"), ColorValue("#E5E5E5"))
             Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Semibold
             Height: =46
@@ -450,20 +451,6 @@
             </style>
             </head>
             <body>
-            
-            <!-- Watermark -->
-                <div style='position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%) rotate(-30deg);
-                    font-size: 50px;
-                    color: rgba(0,0,0,0.1);
-                    z-index: 1;
-                    white-space: nowrap;
-                '>
-                    TEST USE ONLY
-                </div>
-                
             <!-- HEADER -->
             <table style='width:100%; border-collapse:collapse; margin-bottom:15px;'>
               
@@ -567,7 +554,7 @@
             </html>"
             );
             // Send email
-            TestPQS_Email_PDF.Run(
+            ReviewPQS_Email_PDF.Run(
                 varHTML,
                 "PQS_Review_" & ddVenue.SelectedText.Value & "_" & txtTech.Text & "_" & Text(
                     Today(),

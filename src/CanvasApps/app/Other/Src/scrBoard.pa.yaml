@@ -11,7 +11,7 @@ Screens:
     Properties:
       Fill: =RGBA(255,255,255,1)
       LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
-      OnVisible: =Reset(rdPQS);Reset(txtSupSSO);Reset(txtManagerSSO);Reset(txtTech);Reset(txtTechSSO)
+      OnVisible: =Reset(rdPQS);Reset(txtSupSSO);Reset(txtManagerSSO);Reset(txtTech);Reset(txtTechSSO);Clear(colActiveMods)
     Children:
       - Image1:
           Control: Image@2.2.3
@@ -52,6 +52,7 @@ Screens:
                   CheckboxBorderColor: =RGBA(96, 94, 92, 1)
                   CheckmarkFill: =RGBA(0, 120, 212, 1)
                   Color: =RGBA(255, 255, 255, 1)
+                  Default: =ThisItem.Value in colActiveMods
                   DisabledBorderColor: =RGBA(0, 0, 0, 0)
                   DisabledColor: =RGBA(255, 255, 255, 1)
                   DisplayMode: =If(rdPQS.Selected.Value = "Full PQS", DisplayMode.Disabled, DisplayMode.Edit)

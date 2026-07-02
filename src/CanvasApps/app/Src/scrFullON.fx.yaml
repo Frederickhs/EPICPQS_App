@@ -156,7 +156,7 @@
         BorderColor: =RGBA(245, 245, 245, 1)
         DelayItemLoading: =true
         Height: =105
-        Items: =colActiveMods
+        Items: =Sort( colActiveMods, Value, SortOrder.Ascending)
         LoadingSpinner: =LoadingSpinner.Data
         TemplatePadding: =0
         TemplateSize: =207
@@ -469,7 +469,24 @@
         DisabledBorderColor: =RGBA(0, 0, 0, 0)
         DisabledColor: =RGBA(161, 159, 157, 1)
         DisabledFill: =RGBA(242, 242, 241, 0)
-        Fill: =If(CountIf(colPQSGrade,IsCorrect= "Correct")+CountIf(colPQSGrade,IsCorrect= "Incorrect")+CountIf(colWIGrade,IsCorrect= "Correct")+CountIf(colWIGrade,IsCorrect= "Incorrect") < 20, Color.Gray,Color.Green)
+        Fill: |-
+            =If(
+                CountIf(
+                    colPQSGrade,
+                    IsCorrect = "Correct"
+                ) + CountIf(
+                    colPQSGrade,
+                    IsCorrect = "Incorrect"
+                ) + CountIf(
+                    colWIGrade,
+                    IsCorrect = "Correct"
+                ) + CountIf(
+                    colWIGrade,
+                    IsCorrect = "Incorrect"
+                ) < 20,
+                Color.Gray,
+                Color.Green
+            )
         Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Semibold
         HoverBorderColor: =RGBA(0, 0, 0, 0)
@@ -570,22 +587,6 @@
             </style>
             </head>
             <body>
-            
-            <!-- Watermark -->
-                <div style='position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%) rotate(-30deg);
-                    font-size: 50px;
-                    color: rgba(0,0,0,0.1);
-                    z-index: 1;
-                    white-space: nowrap;
-                '>
-                    PQS - TEST USE ONLY
-                </div>
-            
-            
-            
             
             <!-- HEADER -->
             <table style='width:100%; border-collapse:collapse; margin-bottom:15px;'>
@@ -707,7 +708,7 @@
             // Send email
             
             
-            TestPQS_Email_PDF.Run(
+            PQS_Email_PDF.Run(
                 varHTML,
                 "PQS_Board_" & ddVenue.SelectedText.Value & "_" & txtTech.Text & "_" & Text(
                     Today(),
@@ -725,8 +726,24 @@
         RadiusBottomRight: =0
         RadiusTopLeft: =0
         RadiusTopRight: =0
-        Size: =15
-        Text: =If(CountIf(colPQSGrade,IsCorrect= "Correct")+CountIf(colPQSGrade,IsCorrect= "Incorrect")+CountIf(colWIGrade,IsCorrect= "Correct")+CountIf(colWIGrade,IsCorrect= "Incorrect") < 20, "Minimum not met", "Save & Complete")
+        Text: |-
+            =If(
+                CountIf(
+                    colPQSGrade,
+                    IsCorrect = "Correct"
+                ) + CountIf(
+                    colPQSGrade,
+                    IsCorrect = "Incorrect"
+                ) + CountIf(
+                    colWIGrade,
+                    IsCorrect = "Correct"
+                ) + CountIf(
+                    colWIGrade,
+                    IsCorrect = "Incorrect"
+                ) < 20,
+                "Minimum not met",
+                "Save & Complete"
+            )
         Width: =178
         X: =1141
         Y: =691
@@ -784,7 +801,6 @@
         RadiusBottomRight: =0
         RadiusTopLeft: =0
         RadiusTopRight: =0
-        Size: =15
         Text: ="Write-In Question"
         Width: =176
         X: =814
@@ -1005,28 +1021,52 @@
             HoverColor: =RGBA(255, 255, 255, 1)
             HoverFill: =RGBA(16, 110, 190, 1)
             OnSelect: |-
-                =If(IsBlank(txtWIQuestion.Text) Or IsBlank(txtWIAnswer.Text) Or Lower(Trim(txtWIQuestion.Text)) = "wi" Or Lower(Trim(txtWIAnswer.Text)) = "wi" Or drWIMod.Selected.Value = "-" Or Lower(Trim(txtWIQuestion.Text)) = "Write-In" Or Lower(Trim(txtWIQuestion.Text)) = "Write In" Or Lower(Trim(txtWIAnswer.Text)) = "correct" Or Lower(Trim(txtWIAnswer.Text)) = "incorrect",
-                Notify("Question, Answer and Mod required.",NotificationType.Error),
-                
-                    Collect(colWIGrade,
+                =With(
                     {
-                        QuestionID: GUID(),
-                        QNumber: "WI",
-                        Question: txtWIQuestion.Text,
-                        IsCorrect: "Correct",
-                        Mod: drWIMod.Selected.Value});
+                        q: Lower(Trim(txtWIQuestion.Text)),
+                        a: Lower(Trim(txtWIAnswer.Text))
+                    },
+                    If(
+                        IsBlank(q) ||
+                        IsBlank(a) ||
+                        drWIMod.Selected.Value = "-" ||
+                        q in ["wi", "write-in", "write in","write in question","write-in question","wi question","w-i question"] ||
+                        a in ["wi", "correct", "incorrect","write in answer","write-in answer", "wi answer", "w-i answer"],
                 
-                Patch(EPICWIQuestion, Defaults(EPICWIQuestion),
-                {SessionID:varBoardSessionID,
-                Question:txtWIQuestion.Text,
-                Answer: txtWIAnswer.Text,
-                Result: {Value:"Correct"},
-                Manager: txtManager.Text,
-                Date: Today(),
-                Venue: ddVenue.SelectedText.Value,
-                Mod:drWIMod.SelectedText});
+                        Notify("Question, Answer and Mod required.", NotificationType.Error),
                 
-                Reset(txtWIAnswer);Reset(txtWIQuestion);Reset(drWIMod);Set(varShowWIPopup,false))
+                        Collect(
+                            colWIGrade,
+                            {
+                                QuestionID: GUID(),
+                                QNumber: "WI",
+                                Question: txtWIQuestion.Text,
+                                IsCorrect: "Correct",
+                                Mod: drWIMod.Selected.Value
+                            }
+                        );
+                
+                        Patch(
+                            EPICWIQuestion,
+                            Defaults(EPICWIQuestion),
+                            {
+                                SessionID: varBoardSessionID,
+                                Question: txtWIQuestion.Text,
+                                Answer: txtWIAnswer.Text,
+                                Result: {Value: "Correct"},
+                                Manager: txtManager.Text,
+                                Date: Today(),
+                                Venue: ddVenue.SelectedText.Value,
+                                Mod: drWIMod.SelectedText
+                            }
+                        );
+                
+                        Reset(txtWIAnswer);
+                        Reset(txtWIQuestion);
+                        Reset(drWIMod);
+                        Set(varShowWIPopup, false)
+                    )
+                )
             PressedBorderColor: =RGBA(0, 69, 120, 1)
             PressedColor: =RGBA(255, 255, 255, 1)
             PressedFill: =RGBA(16, 110, 190, 1)
@@ -1054,28 +1094,52 @@
             HoverColor: =RGBA(255, 255, 255, 1)
             HoverFill: =RGBA(16, 110, 190, 1)
             OnSelect: |-
-                =If(IsBlank(txtWIQuestion.Text) Or IsBlank(txtWIAnswer.Text) Or Lower(Trim(txtWIQuestion.Text)) = "wi" Or Lower(Trim(txtWIAnswer.Text)) = "wi" Or drWIMod.Selected.Value = "-",
-                Notify("Question, Answer and Mod required.",NotificationType.Error),
-                
-                    Collect(colWIGrade,
+                =With(
                     {
-                        QuestionID: GUID(),
-                        QNumber: "WI",
-                        Question: txtWIQuestion.Text,
-                        IsCorrect: "Incorrect",
-                        Mod: drWIMod.Selected.Value});
+                        q: Lower(Trim(txtWIQuestion.Text)),
+                        a: Lower(Trim(txtWIAnswer.Text))
+                    },
+                    If(
+                        IsBlank(q) ||
+                        IsBlank(a) ||
+                        drWIMod.Selected.Value = "-" ||
+                        q in ["wi", "write-in", "write in","write in question","write-in question","wi question","w-i question"] ||
+                        a in ["wi", "correct", "incorrect","write in answer","write-in answer", "wi answer", "w-i answer"],
                 
-                Patch(EPICWIQuestion, Defaults(EPICWIQuestion),
-                {SessionID:varBoardSessionID,
-                Question:txtWIQuestion.Text,
-                Answer: txtWIAnswer.Text,
-                Result: {Value:"Incorrect"},
-                Manager: txtManager.Text,
-                Date: Today(),
-                Venue: ddVenue.SelectedText.Value,
-                Mod:drWIMod.SelectedText});
+                        Notify("Question, Answer and Mod required.", NotificationType.Error),
                 
-                Reset(txtWIAnswer);Reset(txtWIQuestion);Reset(drWIMod);Set(varShowWIPopup,false))
+                        Collect(
+                            colWIGrade,
+                            {
+                                QuestionID: GUID(),
+                                QNumber: "WI",
+                                Question: txtWIQuestion.Text,
+                                IsCorrect: "Incorrect",
+                                Mod: drWIMod.Selected.Value
+                            }
+                        );
+                
+                        Patch(
+                            EPICWIQuestion,
+                            Defaults(EPICWIQuestion),
+                            {
+                                SessionID: varBoardSessionID,
+                                Question: txtWIQuestion.Text,
+                                Answer: txtWIAnswer.Text,
+                                Result: {Value: "Correct"},
+                                Manager: txtManager.Text,
+                                Date: Today(),
+                                Venue: ddVenue.SelectedText.Value,
+                                Mod: drWIMod.SelectedText
+                            }
+                        );
+                
+                        Reset(txtWIAnswer);
+                        Reset(txtWIQuestion);
+                        Reset(drWIMod);
+                        Set(varShowWIPopup, false)
+                    )
+                )
             PressedBorderColor: =RGBA(0, 69, 120, 1)
             PressedColor: =RGBA(255, 255, 255, 1)
             PressedFill: =RGBA(16, 110, 190, 1)
