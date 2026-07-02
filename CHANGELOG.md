@@ -10,6 +10,29 @@ This project follows a **controlled update model**:
 
 ---
 
+## [v2.1.4] – 7/2/26 - Minor changes in functionality
+
+**Status:** Approved
+
+### Added
+
+- Fixed conditions for WI errors.
+- Sort buttons of partials mods on order.
+- PDFs for Boards and Reviews are ready to use without watermarks.
+
+### Fixed
+
+- On reviews Mod 0 is auto selected to start with.
+
+>[!IMPORTANT]
+>This version is ready for production, this is the last update before 7/6/26
+
+---
+
+<details>
+
+<summary> Previous Versions </summary>
+
 ## [v2.1.3] – 6/18/26 - Changes on Functions in the App
 
 **Status:** Approved
@@ -21,12 +44,6 @@ This project follows a **controlled update model**:
 - When a partial PQS is selected, it requires a mod selection to start.
 - On scrVenue btnNex is visible after selecting a Land AND a Venue.
 - Changed total of questions for Reviews.
-
----
-
-<details>
-
-<summary> Previous Versions </summary>
 
 ## [v2.1.2] – 6/11/26 - Changes on Functions in the App
 
