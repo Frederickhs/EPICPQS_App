@@ -10,6 +10,27 @@ This project follows a **controlled update model**:
 
 ---
 
+## [v2.1.5] – 7/6/26 - Minor changes in functionality
+
+**Status:** Approved
+
+### Added
+
+- Added a Maintenance screen, it can be used for downtimes.
+
+### Fixed
+
+- Changed name of Celestial Park Trainer.
+
+>[!IMPORTANT]
+>This version is ready for production.
+
+---
+
+<details>
+
+<summary> Previous Versions </summary>
+
 ## [v2.1.4] – 7/2/26 - Minor changes in functionality
 
 **Status:** Approved
@@ -26,12 +47,6 @@ This project follows a **controlled update model**:
 
 >[!IMPORTANT]
 >This version is ready for production, this is the last update before 7/6/26
-
----
-
-<details>
-
-<summary> Previous Versions </summary>
 
 ## [v2.1.3] – 6/18/26 - Changes on Functions in the App
 
