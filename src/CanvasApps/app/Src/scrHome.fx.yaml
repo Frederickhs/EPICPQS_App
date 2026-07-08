@@ -1,6 +1,6 @@
 scrHome As screen:
     LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
-    OnVisible: =Set(varVenue,lblVenue.Text)
+    OnVisible: =Set(varVenue,lblVenue.Text);
 
     imgBack2 As image:
         BorderColor: =RGBA(0, 0, 0, 0)

@@ -1,6 +1,6 @@
 scrVenue As screen:
     LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
-    OnVisible: =Reset(ddLand);Set(varRefreshCount, 0)
+    OnVisible: =Reset(ddLand);Set(varRefreshCount, 0);
 
     imgBack As image:
         BorderColor: =RGBA(0, 0, 0, 0)
@@ -119,13 +119,14 @@ scrVenue As screen:
         HoverColor: =RGBA(255, 255, 255, 1)
         HoverFill: =RGBA(16, 110, 190, 1)
         OnSelect: |
-            =Navigate(scrHome);
+            =//Navigate(scrMaintenance);
+            Navigate(scrHome);
             Set(
                 varTrainer,
                 Switch(
                     ddLand.SelectedText.Value,
                     "Celestial Park",
-                    "Darrel Fletcher",
+                    "Joe Perez",
                     "Dark Universe",
                     "Frederick Herrera",
                     "Isle of Berk",
@@ -141,7 +142,7 @@ scrVenue As screen:
                 Switch(
                     ddLand.SelectedText.Value,
                     "Celestial Park",
-                    "702394772",
+                    "703044970",
                     "Dark Universe",
                     "703153842",
                     "Isle of Berk",
@@ -266,7 +267,7 @@ scrVenue As screen:
         Font: =Font.'Segoe UI'
         Height: =17
         Size: =6
-        Text: ="V-2.1.4"
+        Text: ="V-2.1.5"
         Width: =51
         X: =1249
         Y: =40

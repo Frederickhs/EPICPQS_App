@@ -11,7 +11,7 @@ Screens:
     Properties:
       Fill: =RGBA(255, 255, 255, 1)
       LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
-      OnVisible: =Set(varVenue,lblVenue.Text)
+      OnVisible: =Set(varVenue,lblVenue.Text);
     Children:
       - imgBack2:
           Control: Image@2.2.3
