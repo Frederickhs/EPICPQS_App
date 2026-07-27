@@ -23,10 +23,10 @@
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 824,
+                  "charLength": 856,
                   "charOffset": 0,
                   "snippet": {
-                    "text": "Switch(\n    ddLand.Selected.Value,\n    \"Dark Universe\",\n    [\n        \"Darkmoor\",\n        \"Curse of the Werewolf\",\n        \"Monsters Unchained\",\n        \"Please Select a Venue\"\n    ],\n    \"Potter\",\n    [\n        \"Ministry of Magic\",\n        \"Paris\",\n        \"Le Cirque Arcanus\",\n        \"Please Select a Venue\"\n    ],\n    \"Celestial Park\",\n    [\n        \"Constellation Carousel\",\n        \"Stardust Racers\",\n        \"Celestial Park\",\n        \"Please Select a Venue\"\n    ],\n    \"Nintendo\",\n    [\n        \"Mario Kart\",\n        \"Yoshi\",\n        \"Donkey Kong\",\n        \"Nintendo Land\",\n        \"Please Select a Venue\"\n    ],\n    \"Isle of Berk\",\n    [\n        \"Dragon Racers Rally\",\n        \"Fyre Drill\",\n        \"Isle of Berk\",\n        \"Untrainable Dragon\",\n        \"Wing Gliders\",\n        \"Please Select a Venue\"\n    ],\n    []\n)"
+                    "text": "Switch(\n    ddLand.Selected.Value,\n    \"Dark Universe\",\n    [\n        \"Darkmoor\",\n        \"Curse of the Werewolf\",\n        \"Monsters Unchained\",\n        \"Please Select a Venue\"\n    ],\n    \"Potter\",\n    [\n        \"Ministry of Magic\",\n        \"Paris\",\n        \"Le Cirque Arcanus\",\n        \"Please Select a Venue\"\n    ],\n    \"Celestial Park\",\n    [\n        \"Constellation Carousel\",\n        \"Stardust Racers\",\n        \"Celestial Park\",\n        \"Please Select a Venue\"\n    ],\n    \"Nintendo\",\n    [\n        \"Mario Kart\",\n        \"Yoshi\",\n        \"Donkey Kong\",\n        \"Nintendo Land\",\n        \"Please Select a Venue\"\n    ],\n    \"Isle of Berk\",\n    [\n        \"Dragon Racers Rally\",\n        \"Fyre Drill\",\n        \"Isle of Berk\",\n        \"Untrainable Dragon\",\n        \"Wing Gliders\",\n        \"Viking Training Camp\",\n        \"Please Select a Venue\"\n    ],\n    []\n)"
                   }
                 }
               },

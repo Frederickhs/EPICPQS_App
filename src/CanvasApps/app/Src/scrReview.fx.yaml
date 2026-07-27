@@ -236,11 +236,11 @@
                 Switch(
                     varModCount,
                     2,
-                    35,
+                    42,
                     3,
-                    35,
+                    42,
                     4,
-                    35,
+                    42,
                     5,
                     60,
                     60
@@ -273,7 +273,7 @@
             
             Set(
                 varCatACount,
-                4
+                3
             );
             Set(
                 varCatBCount,

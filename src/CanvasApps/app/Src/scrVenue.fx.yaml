@@ -76,6 +76,7 @@ scrVenue As screen:
                     "Isle of Berk",
                     "Untrainable Dragon",
                     "Wing Gliders",
+                    "Viking Training Camp",
                     "Please Select a Venue"
                 ],
                 []
@@ -86,7 +87,7 @@ scrVenue As screen:
             "Ministry of Magic", Set(varQuestionSource,MI_PQSBank ), "Paris" , Set(varQuestionSource, PA_PQSBank), "Le Cirque Arcanus", Set(varQuestionSource,AR_PQSBank),
             "Constellation Carousel", Set(varQuestionSource,CC_PQSBank ), "Stardust Racers" , Set(varQuestionSource, SR_PQSBank), "Celestial Park", Set(varQuestionSource,CP_PQSBank),
             "Mario Kart", Set(varQuestionSource,MK_PQSBank ), "Yoshi" , Set(varQuestionSource, YO_PQSBank), "Donkey Kong", Set(varQuestionSource,DK_PQSBank),"Nintendo Land", Set(varQuestionSource,SU_PQSBank),
-            "Dragon Racers Rally", Set(varQuestionSource,DR_PQSBank ), "Fyre Drill" , Set(varQuestionSource, FD_PQSBank), "Isle of Berk", Set(varQuestionSource,IB_PQSBank),"Untrainable Dragon" , Set(varQuestionSource, UD_PQSBank), "Wing Gliders", Set(varQuestionSource,WG_PQSBank)
+            "Dragon Racers Rally", Set(varQuestionSource,DR_PQSBank ), "Fyre Drill" , Set(varQuestionSource, FD_PQSBank), "Isle of Berk", Set(varQuestionSource,IB_PQSBank),"Untrainable Dragon" , Set(varQuestionSource, UD_PQSBank), "Wing Gliders", Set(varQuestionSource,WG_PQSBank), "Viking Training Camp", Set(varQuestionSource, VI_PQSBank)
             )
         PaddingBottom: =5
         PaddingLeft: =12
@@ -267,7 +268,7 @@ scrVenue As screen:
         Font: =Font.'Segoe UI'
         Height: =17
         Size: =6
-        Text: ="V-2.1.5"
+        Text: ="V-2.1.6"
         Width: =51
         X: =1249
         Y: =40

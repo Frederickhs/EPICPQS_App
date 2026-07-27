@@ -47,7 +47,7 @@
     "EncodeDataset": true,
     "IsSampleData": false,
     "IsWritable": true,
-    "Name": "PA_PQSBank",
+    "Name": "VI_PQSBank",
     "Type": "ConnectedDataSourceInfo"
   }
 ]

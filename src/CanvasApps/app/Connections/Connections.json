@@ -129,7 +129,7 @@
     "connectionRef": {
       "apiTier": "Standard",
       "displayName": "Office 365 Users",
-      "iconUri": "https://static.powerapps.com/resource/ppcr/releases/v1.0.1816/1.0.1816.4770/office365users/icon.png",
+      "iconUri": "https://static.powerapps.com/resource/ppcr/releases/v1.0.1818/1.0.1818.4788/office365users/icon.png",
       "id": "/providers/microsoft.powerapps/apis/shared_office365users",
       "parameterHints": {},
       "parameterHintsV2": {}
@@ -198,7 +198,7 @@
     "connectionRef": {
       "apiTier": "Standard",
       "displayName": "SharePoint",
-      "iconUri": "https://static.powerapps.com/resource/ppcr/releases/v1.0.1813/1.0.1813.4743/sharepointonline/icon.png",
+      "iconUri": "https://static.powerapps.com/resource/ppcr/releases/v1.0.1813/1.0.1813.4769/sharepointonline/icon.png",
       "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
       "parameterHints": {},
       "parameterHintsV2": {}
@@ -269,6 +269,9 @@
           "UD_PQSBank": {
             "tableName": "bdee279c-ac26-41ef-9e41-98236475a3a5"
           },
+          "VI_PQSBank": {
+            "tableName": "cef719e7-6eec-4182-9ab4-cddc9e67331e"
+          },
           "WG_PQSBank": {
             "tableName": "592839da-b116-4a7b-a45f-bfa41852091e"
           },
@@ -301,7 +304,8 @@
       "EPIC_PQSBoardResults",
       "Trainer_Info",
       "EpicTech_Info",
-      "EPICWIQuestion"
+      "EPICWIQuestion",
+      "VI_PQSBank"
     ],
     "dependencies": {},
     "dependents": [
@@ -314,7 +318,7 @@
     "connectionRef": {
       "apiTier": "Standard",
       "displayName": "Office 365 Outlook",
-      "iconUri": "https://static.powerapps.com/resource/ppcr/releases/v1.0.1817/1.0.1817.4781/office365/icon.png",
+      "iconUri": "https://static.powerapps.com/resource/ppcr/releases/v1.0.1819/1.0.1819.4795/office365/icon.png",
       "id": "/providers/microsoft.powerapps/apis/shared_office365",
       "parameterHints": {},
       "parameterHintsV2": {}

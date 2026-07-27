@@ -125,7 +125,7 @@
             PaddingLeft: =12
             PaddingRight: =0
             PaddingTop: =0
-            Size: =15
+            Size: =12
             Text: =ThisItem.Answer
             VerticalAlign: =VerticalAlign.Top
             Width: =txtQuestion_1.Width
@@ -435,11 +435,10 @@
         FocusedBorderThickness: =4
         Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Semibold
-        Height: =24
-        Size: =16
+        Height: =26
         Text: |-
             ="Correct: " & (CountIf(colPQSGrade,IsCorrect= "Correct")+CountIf(colWIGrade,IsCorrect= "Correct"))
-        Width: =123
+        Width: =145
         X: =20
         Y: =12
         ZIndex: =8
@@ -455,10 +454,9 @@
         Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Semibold
         Height: =24
-        Size: =16
         Text: |-
             ="Incorrect: " &( CountIf(colPQSGrade,IsCorrect= "Incorrect")+CountIf(colWIGrade,IsCorrect= "Incorrect"))
-        Width: =120
+        Width: =170
         X: =20
         Y: =38
         ZIndex: =9
@@ -509,9 +507,7 @@
                     IsCorrect = "Incorrect"
                 )
             );
-            
             //This is the message of the board being completed, the PDF will send no mather what
-            
             If(
                 Confirm(
                     If(
@@ -561,19 +557,33 @@
                 )
             );
             //Information for Report, this will update the List
-            
             Patch(
                 EPIC_PQSBoardResults,
                 LookUp(
-                    EPIC_PQSBoardResults,ID = VarSessionID),
-                    {BoardStatus: varBoardStatus,
-                    TimesRefreshed:varRefreshCount,
-                    BoardType:"Board"});
-                    
-            
-            
+                    EPIC_PQSBoardResults,
+                    ID = VarSessionID
+                ),
+                {
+                    BoardStatus: varBoardStatus,
+                    TimesRefreshed: varRefreshCount,
+                    BoardType: "Board",
+                    Correct: CountIf(
+                        colPQSGrade,
+                        IsCorrect = "Correct"
+                    ) + CountIf(
+                        colWIGrade,
+                        IsCorrect = "Correct"
+                    ),
+                    Incorrect: CountIf(
+                        colPQSGrade,
+                        IsCorrect = "Incorrect"
+                    ) + CountIf(
+                        colWIGrade,
+                        IsCorrect = "Incorrect"
+                    )
+                }
+            );
             // Build HTML for the PDF, all edits on the PDF are made here
-            
             Set(
                 varHTML,
                 "<html>
@@ -587,7 +597,6 @@
             </style>
             </head>
             <body>
-            
             <!-- HEADER -->
             <table style='width:100%; border-collapse:collapse; margin-bottom:15px;'>
               
@@ -703,11 +712,7 @@
             </body>
             </html>"
             );
-            
-            
             // Send email
-            
-            
             PQS_Email_PDF.Run(
                 varHTML,
                 "PQS_Board_" & ddVenue.SelectedText.Value & "_" & txtTech.Text & "_" & Text(
@@ -744,6 +749,7 @@
                 "Minimum not met",
                 "Save & Complete"
             )
+        Visible: =!IsEmpty(colPQSGrade)
         Width: =178
         X: =1141
         Y: =691
