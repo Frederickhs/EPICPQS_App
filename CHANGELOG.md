@@ -10,6 +10,28 @@ This project follows a **controlled update model**:
 
 ---
 
+## [v2.1.6] – 7/27/26 - Multiple changes
+
+**Status:** Approved
+
+### Added
+
+- Viking training Camp added as a venue to Isle of Berk Land.
+- Added patch to update Correct and Incorrect questions from Boards on ```EPIC_PQSBoardresults```.
+
+### Fixed
+
+- btn Complete on ```scrFullON``` will show only after at least one question is graded.
+
+>[!IMPORTANT]
+>This version is ready for production.
+
+---
+
+<details>
+
+<summary> Previous Versions </summary>
+
 ## [v2.1.5] – 7/6/26 - Minor changes in functionality
 
 **Status:** Approved
@@ -24,12 +46,6 @@ This project follows a **controlled update model**:
 
 >[!IMPORTANT]
 >This version is ready for production.
-
----
-
-<details>
-
-<summary> Previous Versions </summary>
 
 ## [v2.1.4] – 7/2/26 - Minor changes in functionality
 
