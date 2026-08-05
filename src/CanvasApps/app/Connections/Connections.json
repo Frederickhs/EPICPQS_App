@@ -236,6 +236,9 @@
           "EPICWIQuestion": {
             "tableName": "24d64451-3871-41fd-842c-18d444795613"
           },
+          "EUSS_PQSBank": {
+            "tableName": "5e6567bb-fb95-4fe7-89c4-9bde6b521649"
+          },
           "FD_PQSBank": {
             "tableName": "fb2225b3-adb1-4956-b2dd-34c370651459"
           },
@@ -305,7 +308,8 @@
       "Trainer_Info",
       "EpicTech_Info",
       "EPICWIQuestion",
-      "VI_PQSBank"
+      "VI_PQSBank",
+      "EUSS_PQSBank"
     ],
     "dependencies": {},
     "dependents": [

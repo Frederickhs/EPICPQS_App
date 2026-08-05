@@ -92,6 +92,11 @@ Screens:
                       "Viking Training Camp",
                       "Please Select a Venue"
                   ],
+                      "Shared Services",
+                  [
+                      "Show Systems",
+                      "Please Select a Venue"
+                  ],
                   []
               )
             Items.Value: =Value
@@ -101,7 +106,7 @@ Screens:
               "Ministry of Magic", Set(varQuestionSource,MI_PQSBank ), "Paris" , Set(varQuestionSource, PA_PQSBank), "Le Cirque Arcanus", Set(varQuestionSource,AR_PQSBank),
               "Constellation Carousel", Set(varQuestionSource,CC_PQSBank ), "Stardust Racers" , Set(varQuestionSource, SR_PQSBank), "Celestial Park", Set(varQuestionSource,CP_PQSBank),
               "Mario Kart", Set(varQuestionSource,MK_PQSBank ), "Yoshi" , Set(varQuestionSource, YO_PQSBank), "Donkey Kong", Set(varQuestionSource,DK_PQSBank),"Nintendo Land", Set(varQuestionSource,SU_PQSBank),
-              "Dragon Racers Rally", Set(varQuestionSource,DR_PQSBank ), "Fyre Drill" , Set(varQuestionSource, FD_PQSBank), "Isle of Berk", Set(varQuestionSource,IB_PQSBank),"Untrainable Dragon" , Set(varQuestionSource, UD_PQSBank), "Wing Gliders", Set(varQuestionSource,WG_PQSBank), "Viking Training Camp", Set(varQuestionSource, VI_PQSBank)
+              "Dragon Racers Rally", Set(varQuestionSource,DR_PQSBank ), "Fyre Drill" , Set(varQuestionSource, FD_PQSBank), "Isle of Berk", Set(varQuestionSource,IB_PQSBank),"Untrainable Dragon" , Set(varQuestionSource, UD_PQSBank), "Wing Gliders", Set(varQuestionSource,WG_PQSBank), "Viking Training Camp", Set(varQuestionSource, VI_PQSBank),"Show Systems", Set(varQuestionSource, EUSS_PQSBank)
               )
             PaddingBottom: =5
             PaddingLeft: =12
@@ -115,7 +120,7 @@ Screens:
             Visible: |-
               =ddLand.SelectedText.Value in 
               [
-                  "Dark Universe", "Nintendo", "Isle of Berk", "Potter", "Celestial Park"]
+                  "Dark Universe", "Nintendo", "Isle of Berk", "Potter", "Celestial Park","Shared Services"]
             X: =909
             Y: =310
       - btnNext:
@@ -148,7 +153,9 @@ Screens:
                       "Nintendo",
                       "Melissa Cruz",
                       "Potter",
-                      "Mike Kahl"
+                      "Mike Kahl",
+                      "Shared Services",
+                      "Cody Bickford"
                   )
               );
               Set(
@@ -164,7 +171,9 @@ Screens:
                       "Nintendo",
                       "703018098",
                       "Potter",
-                      "703037277"
+                      "703037277",
+                      "Shared Services",
+                      "703124435"
                   )
               );
             PressedBorderColor: =RGBA(0, 69, 120, 1)
@@ -219,7 +228,7 @@ Screens:
             HoverBorderColor: =RGBA(16, 110, 190, 1)
             HoverColor: =RGBA(50, 49, 48, 1)
             HoverFill: =RGBA(245, 245, 245, 1)
-            Items: =["Select a land", "Celestial Park", "Dark Universe", "Isle of Berk", "Nintendo", "Potter"]
+            Items: =["Select a land", "Celestial Park", "Dark Universe", "Isle of Berk", "Nintendo", "Potter","Shared Services"]
             Items.Value: =Value
             PaddingBottom: =5
             PaddingLeft: =12
