@@ -169,9 +169,52 @@ scrBoard As screen:
         HoverColor: =RGBA(255, 255, 255, 1)
         HoverFill: =RGBA(16, 110, 190, 1)
         OnSelect: |-
-            =Set(varTech,txtTech);Set(varModBro, true );Set(varMng,txtManager);Set(varSup,txtSupervisor);Set(varBoardType,rdPQS.SelectedText);Clear(colPQSGrade);Clear(colWIGrade);
+            =Set(
+                varTech,
+                txtTech
+            );
+            Set(
+                varModBro,
+                true
+            );
+            Set(
+                varMng,
+                txtManager
+            );
+            Set(
+                varSup,
+                txtSupervisor
+            );
+            Set(
+                varBoardType,
+                rdPQS.SelectedText
+            );
+            Clear(colPQSGrade);
+            Clear(colWIGrade);
             //Creates the Report
-            Set(varBoardSessionID,Text(GUID()));Set(varVenueSelected,ddVenue.SelectedText.Value);Navigate(scrFullON);Reset(txtWIAnswer);Reset(txtWIQuestion);Reset(drWIMod);Set(VarSessionID,SessionPatch.Run(varTech.Text,varMng.Text,varSup.Text,varVenueSelected,Text(Now())).sessionid)
+            Set(
+                varBoardSessionID,
+                Text(GUID())
+            );
+            Set(
+                varVenueSelected,
+                ddVenue.SelectedText.Value
+            );
+            
+            Set(
+                VarSessionID,
+                SessionPatch.Run(
+                    varTech.Text,
+                    varMng.Text,
+                    varSup.Text,
+                    varVenueSelected,
+                    Text(Now())
+                ).sessionid
+            );
+            Navigate(scrFullON);
+            Reset(txtWIAnswer);
+            Reset(txtWIQuestion);
+            Reset(drWIMod);
         PressedBorderColor: =RGBA(0, 69, 120, 1)
         PressedColor: =RGBA(255, 255, 255, 1)
         PressedFill: =RGBA(16, 110, 190, 1)

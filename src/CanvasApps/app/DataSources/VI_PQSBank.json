@@ -3,7 +3,7 @@
     "ApiId": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
     "CdpRevision": {
       "BaseUrl": "/",
-      "LastChangedTimeString": "2026-07-11T23:05:50.1600000Z",
+      "LastChangedTimeString": "2026-09-10T22:06:16.1750000Z",
       "RevisionNumber": 1
     },
     "ConnectedDataSourceInfoNameMapping": {
@@ -15,7 +15,7 @@
       "{FullPath}": "Full Path",
       "{HasAttachments}": "Has attachments",
       "{Identifier}": "Identifier",
-      "{IsFolder}": "IsFolder",
+      "{IsFolder}": "Is folder",
       "{Link}": "Link to item",
       "{ModerationComment}": "Comments associated with the content approval of this list item",
       "{ModerationStatus}": "Content approval status",
@@ -34,6 +34,7 @@
       "Created": "Created",
       "Editor": "Modified By",
       "Editor#Claims": "Modified By Claims",
+      "Hint": "Hint",
       "ID": "ID",
       "Mod": "Mod",
       "Mod#Id": "Mod Id",

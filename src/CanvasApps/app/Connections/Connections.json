@@ -4,7 +4,7 @@
     "connectionRef": {
       "apiTier": "Standard",
       "displayName": "OneDrive for Business",
-      "iconUri": "https://static.powerapps.com/resource/ppcr/releases/v1.0.1814/1.0.1814.4751/onedriveforbusiness/icon.png",
+      "iconUri": "https://static.powerapps.com/resource/ppcr/releases/v1.0.1827/1.0.1827.4902/onedriveforbusiness/icon.png",
       "id": "/providers/microsoft.powerapps/apis/shared_onedriveforbusiness",
       "parameterHints": {},
       "parameterHintsV2": {}
@@ -26,7 +26,7 @@
     "connectionRef": {
       "apiTier": "Standard",
       "displayName": "Logic flows",
-      "iconUri": "https://conn-afd-prod-endpoint-bmc9bqahasf3grgk.b01.azurefd.net/v1.0.1774/1.0.1774.4397/logicflows/icon.png",
+      "iconUri": "https://static.powerapps.com/resource/ppcr/releases/v1.0.1827/1.0.1827.4908/logicflows/icon.png",
       "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
       "parameterHints": {
         "05a286cf-c22f-4a7e-9063-ef02470d04cf": {
@@ -77,7 +77,7 @@
     "connectionRef": {
       "apiTier": "Standard",
       "displayName": "Logic flows",
-      "iconUri": "https://conn-afd-prod-endpoint-bmc9bqahasf3grgk.b01.azurefd.net/v1.0.1774/1.0.1774.4397/logicflows/icon.png",
+      "iconUri": "https://static.powerapps.com/resource/ppcr/releases/v1.0.1827/1.0.1827.4908/logicflows/icon.png",
       "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
       "parameterHints": {
         "05a286cf-c22f-4a7e-9063-ef02470d04cf": {
@@ -149,7 +149,7 @@
     "connectionRef": {
       "apiTier": "Standard",
       "displayName": "Logic flows",
-      "iconUri": "https://conn-afd-prod-endpoint-bmc9bqahasf3grgk.b01.azurefd.net/v1.0.1774/1.0.1774.4397/logicflows/icon.png",
+      "iconUri": "https://static.powerapps.com/resource/ppcr/releases/v1.0.1827/1.0.1827.4908/logicflows/icon.png",
       "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
       "parameterHints": {
         "d54a52de-e43b-4d78-af7d-31bbaadb8a09": {
@@ -198,7 +198,7 @@
     "connectionRef": {
       "apiTier": "Standard",
       "displayName": "SharePoint",
-      "iconUri": "https://static.powerapps.com/resource/ppcr/releases/v1.0.1813/1.0.1813.4769/sharepointonline/icon.png",
+      "iconUri": "https://static.powerapps.com/resource/ppcr/releases/v1.0.1827/1.0.1827.4913/sharepointonline/icon.png",
       "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
       "parameterHints": {},
       "parameterHintsV2": {}
@@ -342,7 +342,7 @@
     "connectionRef": {
       "apiTier": "Standard",
       "displayName": "Logic flows",
-      "iconUri": "https://conn-afd-prod-endpoint-bmc9bqahasf3grgk.b01.azurefd.net/v1.0.1774/1.0.1774.4397/logicflows/icon.png",
+      "iconUri": "https://static.powerapps.com/resource/ppcr/releases/v1.0.1827/1.0.1827.4908/logicflows/icon.png",
       "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
       "parameterHints": {
         "05a286cf-c22f-4a7e-9063-ef02470d04cf": {
