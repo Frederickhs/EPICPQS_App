@@ -6,9 +6,9 @@ The purpose of this document is to provide a centralized location for business r
 
 ---
 
-# Global Variables
+## Global Variables
 
-## Session Variables
+### Session Variables
 
 ```powerfx
 varBoardSessionID
@@ -811,4 +811,3 @@ Category B remains Category B.
 Mod 0 handled separately.
 
 Graded questions are always preserved.
-```
