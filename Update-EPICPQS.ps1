@@ -27,6 +27,11 @@ Write-Host "Staging Files..."
 git add .
 
 Write-Host ""
+Write-Host "Git Status"
+Write-Host "----------"
+git status
+
+Write-Host ""
 $msg = Read-Host "Commit Message"
 
 git commit -m $msg
