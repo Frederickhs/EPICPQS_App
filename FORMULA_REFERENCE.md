@@ -44,7 +44,7 @@ varTrainerSSO
 
 ### Purpose
 
-Automatically assigns the Training Supervisor for the selected land.
+Automatically assigns the Trainer for the selected land.
 
 ---
 
@@ -142,7 +142,7 @@ Mods are NOT treated as separate boards.
 
 ## Partial PQS
 
-The Trainer manually selects modules.
+The Manager manually selects modules.
 
 Stored in:
 
